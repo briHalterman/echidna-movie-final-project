@@ -89,9 +89,10 @@ Users:
 Movie entry:
 -Title (required)
 -Year (required)
--Rating (personal & average among users) 
--Studio
+-Director
 -Genre
+-Studio
+-Rating (personal & average among users) 
 
 Nested data model for cast and crew:
 -First name
@@ -106,7 +107,7 @@ Additional fields for the movie entry data model could include:
 -Cover image
 -Headshots for cast & crew
 -“Watched” counter with dates
--Comments
+-Notes
 
 Features
 
@@ -118,5 +119,22 @@ Features
 
 To Do:
 1. ~~Project Proposal~~
-2. Wireframing
-3. 
+2. ~~Wireframing~~
+3. set up: npm install && npm start
+4. set up basic project structure
+5. set up controllers structures
+6. set up routes structures
+7. connect to db
+8. create & import starter db
+9. create user model
+10. set up register controller
+11. hash password with bcryptjs
+12. implement authentication with jwt
+13. set up login functionality
+14. authenticate routes
+15. set up models
+16. import models
+17. implement CRUD functionality
+18. handle errors
+19. add security packages
+20. deploy to render
