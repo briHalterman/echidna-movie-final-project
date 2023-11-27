@@ -115,3 +115,8 @@ Features
 ~Ability to copy movies from entire catalog to personal library
 ~Form to make or edit movies entries or cast/crew entries
 ~Delete button to remove movie entry
+
+To Do:
+1. ~~Project Proposal~~
+2. Wireframing
+3. 
