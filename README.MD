@@ -58,6 +58,44 @@ Bonus Items (these are entirely optional)
 20. Implement some test cases using Mocha, Chai, and Puppeteer.
 21. For full stack applications, implement Swagger to document the API.
 
+What is Node?
+
+A runtime environment for executing JavaScript code
+Used to build back-end services, Application Programing Interfaces (APIs) such as Web & Mobile Apps
+Highly-scalable, data-intensive & real-time apps
+Comes with a bunch of useful modules
+
+Benefits of Node:
+- Great for prototyping & agile development
+- Superfast & highly scalable
+- JavaScript
+- Cleaner & more consistent codebase
+- Largest ecosystem of open-source libs
+
+Node Architecture
+Executes JavaScript outside of browser
+Chrome's v8 JavaScript engine embedded in C++ program
+Not a Programming Language - Runtime environment for executing JavaScrit code
+Non-blocking - Asynchronous by default
+Continuously monitors event queue
+Ideal for I/O-intensive apps
+
+Node Module System
+-OS
+-fs
+-events
+-http
+
+Node Core:
+Modularity - small building blocks
+Every file is considered a module
+Private - variables & functions scope to module (must be explicitely exported)
+Every node app has a main module
+
+Loading a Module
+Use require() function, require('[ralative path to module]')
+best practice: store result in constant
+
 A Sample Node/Express Project
 
 There is a sample provided that shows a recommended approach to security, as is important for both server side rendered and full stack applications. Although the sample is written in EJS, the security issues and approach also apply to full stack applications.
