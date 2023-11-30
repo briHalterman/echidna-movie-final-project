@@ -2,7 +2,7 @@
   "name": "film-library-catalogue",
   "version": "1.0.0",
   "description": "Node/Express Final Project for Echidna cohort at Code the Dream. Offers a database of movie entries which can be stored in user library and ability to implement CRUD operations through authorized routes.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon prompter.js",
