@@ -18,7 +18,7 @@
     "database"
   ],
   "author": "Brittany Halterman",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.0.1"
   }
