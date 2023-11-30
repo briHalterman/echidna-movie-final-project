@@ -1,13 +1,22 @@
 {
-  "name": "echidna-movie-final",
+  "name": "film-library-catalogue",
   "version": "1.0.0",
-  "description": "Node/Express Final Project",
+  "description": "Node/Express Final Project for Echidna cohort at Code the Dream. Offers a database of movie entries which can be stored in user library and ability to implement CRUD operations through authorized routes.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon prompter.js",
     "start": "node prompter.js"
   },
+  "keywords": [
+    "cinema",
+    "film",
+    "movies",
+    "catalogue",
+    "library",
+    "reference",
+    "database"
+  ],
   "author": "Brittany Halterman",
   "license": "ISC",
   "devDependencies": {
