@@ -1,0 +1,11 @@
+{
+  "name": "echidna-movie-final",
+  "version": "1.0.0",
+  "description": "Node/Express Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brittany Halterman",
+  "license": "ISC"
+}
