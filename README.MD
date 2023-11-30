@@ -96,6 +96,16 @@ Loading a Module
 Use require() function, require('[ralative path to module]')
 best practice: store result in constant
 
+Event
+A signal that something has happened
+
+Class
+Container for related methods and properties
+
+Express
+Framework which gives app clean structure to handle various routes
+Internally built on top of HTTP module in node
+
 A Sample Node/Express Project
 
 There is a sample provided that shows a recommended approach to security, as is important for both server side rendered and full stack applications. Although the sample is written in EJS, the security issues and approach also apply to full stack applications.
