@@ -161,6 +161,7 @@ Features
 
 ~Sign-up, login and logout functionality
 ~Ability to search and sort entire catalog or personal library of movies based on: title, director, year, studio, genre, rating
+~Pagination
 ~Ability to copy movies from entire catalog to personal library
 ~Form to make or edit movies entries or cast/crew entries
 ~Delete button to remove movie entry
