@@ -169,21 +169,22 @@ Features
 To Do:
 1. ~~Project Proposal~~
 2. ~~Wireframing~~
-3. set up: npm install && npm start
-4. set up basic project structure
-5. set up controllers structures
-6. set up routes structures
-7. connect to db
-8. create & import starter db
-9. create user model
-10. set up register controller
-11. hash password with bcryptjs
-12. implement authentication with jwt
-13. set up login functionality
-14. authenticate routes
-15. set up models
-16. import models
-17. implement CRUD functionality
-18. handle errors
-19. add security packages
-20. deploy to render
+3. ~~set up: npm install && npm start~~
+4. http
+5. set up basic project structure
+6. set up controllers structures
+7. set up routes structures
+8. connect to db
+9. create & import starter db
+10. create user model
+11. set up register controller
+12. hash password with bcryptjs
+13. implement authentication with jwt
+14. set up login functionality
+15. authenticate routes
+16. set up models
+17. import models
+18. implement CRUD functionality
+19. handle errors
+20. add security packages
+21. deploy to render
