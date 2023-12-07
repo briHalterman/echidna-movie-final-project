@@ -1,0 +1,28 @@
+{
+  "name": "film-library-catalogue",
+  "version": "1.0.0",
+  "description": "Node/Express Final Project for Echidna cohort at Code the Dream. Offers a database of movie entries which can be stored in user library and ability to implement CRUD operations through authorized routes.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "cinema",
+    "film",
+    "movies",
+    "catalogue",
+    "library",
+    "reference",
+    "database"
+  ],
+  "author": "Brittany Halterman",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
