@@ -170,21 +170,22 @@ To Do:
 1. ~~Project Proposal~~
 2. ~~Wireframing~~
 3. ~~set up: npm install && npm start~~
-4. install express
-5. set up basic project structure
-6. set up controllers structures
-7. set up routes structures
-8. connect to db
-9. create & import starter db
-10. create user model
-11. set up register controller
-12. hash password with bcryptjs
-13. implement authentication with jwt
-14. set up login functionality
-15. authenticate routes
-16. set up models
-17. import models
-18. implement CRUD functionality
-19. handle errors
-20. add security packages
-21. deploy to render
+4. ~~install express~~
+5. listen on server
+6. set up basic project structure
+7. set up controllers structures
+8. set up routes structures
+9. connect to db
+10. create & import starter db
+11. create user model
+12. set up register controller
+13. hash password with bcryptjs
+14. implement authentication with jwt
+15. set up login functionality
+16. authenticate routes
+17. set up models
+18. import models
+19. implement CRUD functionality
+20. handle errors
+21. add security packages
+22. deploy to render
