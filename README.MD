@@ -170,7 +170,7 @@ To Do:
 1. ~~Project Proposal~~
 2. ~~Wireframing~~
 3. ~~set up: npm install && npm start~~
-4. http
+4. install express
 5. set up basic project structure
 6. set up controllers structures
 7. set up routes structures
