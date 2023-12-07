@@ -171,7 +171,7 @@ To Do:
 2. ~~Wireframing~~
 3. ~~set up: npm install && npm start~~
 4. ~~install express~~
-5. listen on server
+5. ~~listen on server~~
 6. set up basic project structure
 7. set up controllers structures
 8. set up routes structures
