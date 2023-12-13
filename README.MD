@@ -169,10 +169,10 @@ Features
 To Do:
 1.  ~~Project Proposal~~
 2.  ~~Wireframing~~
-3.  ~~set up: npm install && npm start~~
-4.  ~~install express~~
+3.  ~~install dependencies & spin up nodemon~~
+4.  
 5.  ~~listen on server~~
-6.  set up basic project structure
+6.  ~~set up basic file structure~~
 7.  set up controllers structures
 8.  set up routes structures
 9.  connect to db
