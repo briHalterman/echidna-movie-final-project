@@ -1,15 +1,20 @@
 // require dotenv
 require('dotenv').config();
 
+// extra security packages
+
 // require and invoke express
 const express = require('express');
 const app = express();
 
+// connect DB
 const connectDB = require('./db/connect');
 
-// middleware
+// routers
 
-// routes
+// error handler
+
+// invoke extra packages
 
 // listen on port 3000
 const port = process.env.PORT || 3000;
