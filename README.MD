@@ -167,25 +167,27 @@ Features
 ~Delete button to remove movie entry
 
 To Do:
-1. ~~Project Proposal~~
-2. ~~Wireframing~~
-3. ~~set up: npm install && npm start~~
-4. ~~install express~~
-5. ~~listen on server~~
-6. set up basic project structure
-7. set up controllers structures
-8. set up routes structures
-9. connect to db
+1.  ~~Project Proposal~~
+2.  ~~Wireframing~~
+3.  ~~install dependencies & spin up nodemon~~
+4.  ~~set up basic file structure~~
+5.  ~~listen on server~~
+6.  ~~connect to db~~
+7.  set up controllers structures
+8.  set up routes structures
+9.  
 10. create & import starter db
-11. create user model
-12. set up register controller
-13. hash password with bcryptjs
-14. implement authentication with jwt
-15. set up login functionality
-16. authenticate routes
-17. set up models
-18. import models
-19. implement CRUD functionality
-20. handle errors
-21. add security packages
-22. deploy to render
+11. implement query params
+12. create user model
+13. set up register controller
+14. hash password with bcryptjs
+15. implement authentication with jwt
+16. set up login functionality
+17. authenticate routes
+18. set up models
+19. import models
+20. implement CRUD functionality
+21. handle errors
+22. add security packages
+23. deploy to render
+24. EJS
