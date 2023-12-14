@@ -14,6 +14,9 @@ const connectDB = require('./db/connect');
 
 // error handler
 
+// configure express.json()
+app.use(express.json());
+
 // invoke extra packages
 
 // listen on port 3000
