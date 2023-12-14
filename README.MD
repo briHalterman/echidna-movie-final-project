@@ -170,12 +170,12 @@ To Do:
 1.  ~~Project Proposal~~
 2.  ~~Wireframing~~
 3.  ~~install dependencies & spin up nodemon~~
-4.  
+4.  ~~set up basic file structure~~
 5.  ~~listen on server~~
-6.  ~~set up basic file structure~~
+6.  ~~connect to db~~
 7.  set up controllers structures
 8.  set up routes structures
-9.  connect to db
+9.  
 10. create & import starter db
 11. implement query params
 12. create user model
