@@ -11,6 +11,7 @@ const app = express();
 const connectDB = require('./db/connect');
 
 const notFound = require('./middleware/not-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 
 // routers
 
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 
 // error handling
 app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 // invoke extra packages
 
