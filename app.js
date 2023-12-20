@@ -17,6 +17,11 @@ const connectDB = require('./db/connect');
 // configure express.json()
 app.use(express.json());
 
+//routes
+app.get('/', (req, res) => {
+  res.send('movie library api');
+});
+
 // invoke extra packages
 
 // listen on port 3000
