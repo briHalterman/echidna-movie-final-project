@@ -1,3 +1,5 @@
+// MOVIE LIBRARY CONTROLLER
+
 const getAllMovies = async (req, res) => {
   res.send('get all movies');
 };
