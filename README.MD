@@ -173,15 +173,15 @@ To Do:
 4.  ~~set up basic file structure~~
 5.  ~~listen on server~~
 6.  ~~connect to db~~
-7.  set up controllers structures
-8.  set up routes structures
+7.  ~~set up controllers & routes structures~~
+8.  implement authentication with jwt
 9.  
 10. create & import starter db
 11. implement query params
 12. create user model
 13. set up register controller
 14. hash password with bcryptjs
-15. implement authentication with jwt
+15. 
 16. set up login functionality
 17. authenticate routes
 18. set up models
