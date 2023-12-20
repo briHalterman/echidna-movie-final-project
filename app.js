@@ -14,14 +14,19 @@ const notFound = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
 // routers
+const authRouter = require('./routes/auth');
+const libraryRouter = require('./routes/library');
 
 // configure express.json()
 app.use(express.json());
 
-//route for handling get request for path /
-app.get('/', (req, res) => {
-  res.send('movie library api');
-});
+// routes
+// route for handling get request for path /
+// app.get('/', (req, res) => {
+//   res.send('movie library api');
+// });
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/library', libraryRouter);
 
 // error handling
 app.use(notFound);

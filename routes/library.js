@@ -7,7 +7,7 @@ const {
   createMovie,
   updateMovie,
   removeMovie
-} = require('../controllers/movies');
+} = require('../controllers/library');
 
 router.route('/').post(createMovie).get(getAllMovies);
 router.route('/:id').get(getMovie).delete(removeMovie).patch(updateMovie);
