@@ -1,15 +1,33 @@
 // require dotenv
 require('dotenv').config();
 
+// extra security packages
+
 // require and invoke express
 const express = require('express');
 const app = express();
 
+// connect DB
 const connectDB = require('./db/connect');
 
-// middleware
+const notFound = require('./middleware/not-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 
-// routes
+// routers
+
+// configure express.json()
+app.use(express.json());
+
+//route for handling get request for path /
+app.get('/', (req, res) => {
+  res.send('movie library api');
+});
+
+// error handling
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+
+// invoke extra packages
 
 // listen on port 3000
 const port = process.env.PORT || 3000;
