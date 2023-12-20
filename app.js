@@ -10,17 +10,20 @@ const app = express();
 // connect DB
 const connectDB = require('./db/connect');
 
-// routers
+const notFound = require('./middleware/not-found');
 
-// error handler
+// routers
 
 // configure express.json()
 app.use(express.json());
 
-//routes
+//route for handling get request for path /
 app.get('/', (req, res) => {
   res.send('movie library api');
 });
+
+// error handling
+app.use(notFound);
 
 // invoke extra packages
 
