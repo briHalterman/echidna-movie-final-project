@@ -177,10 +177,10 @@ To Do:
 5.  ~~listen on server~~
 6.  ~~connect to db~~
 7.  ~~set up controllers & routes structures~~
-8.  set up postman
-9.  set up mongoose
+8.  ~~set up mongoose & postman~~
+9.  implement authentication with jwt
 10. handle errors
-11. implement authentication with jwt
+11. 
 12. create & import starter db
 13. implement query params
 14. create user model
@@ -194,3 +194,4 @@ To Do:
 22. add security packages
 23. deploy to render
 24. EJS
+25. 
