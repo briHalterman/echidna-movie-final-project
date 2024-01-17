@@ -106,6 +106,9 @@ Express
 Framework which gives app clean structure to handle various routes
 Internally built on top of HTTP module in node
 
+Restricting Certain Resources - Authentification
+If a valid token is present the request, user can access specific data. If we have a restricted route, and the token is not present (or not valid), the server will kick back error response.
+
 A Sample Node/Express Project
 
 There is a sample provided that shows a recommended approach to security, as is important for both server side rendered and full stack applications. Although the sample is written in EJS, the security issues and approach also apply to full stack applications.
@@ -174,20 +177,20 @@ To Do:
 5.  ~~listen on server~~
 6.  ~~connect to db~~
 7.  ~~set up controllers & routes structures~~
-8.  implement authentication with jwt
-9.  
-10. create & import starter db
-11. implement query params
-12. create user model
-13. set up register controller
-14. hash password with bcryptjs
-15. 
-16. set up login functionality
-17. authenticate routes
-18. set up models
-19. import models
-20. implement CRUD functionality
-21. handle errors
+8.  set up postman
+9.  set up mongoose
+10. handle errors
+11. implement authentication with jwt
+12. create & import starter db
+13. implement query params
+14. create user model
+15. set up register controller
+16. hash password with bcryptjs 
+17. set up login functionality
+18. authenticate routes
+19. set up models
+20. import models
+21. implement CRUD functionality 
 22. add security packages
 23. deploy to render
 24. EJS
