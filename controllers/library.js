@@ -1,6 +1,7 @@
 // MOVIE LIBRARY CONTROLLER
 
 const getAllMovies = async (req, res) => {
+  // throw new Error('testing async errors');
   res.status(200).json({ msg: 'get all movies' });
 };
 

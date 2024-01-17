@@ -1,5 +1,6 @@
 // require dotenv
 require('dotenv').config();
+require('express-async-errors');
 
 // extra security packages
 
