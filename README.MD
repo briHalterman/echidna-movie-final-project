@@ -178,8 +178,8 @@ To Do:
 6.  ~~connect to db~~
 7.  ~~set up controllers & routes structures~~
 8.  ~~set up mongoose & postman~~
-9.  implement authentication with jwt
-10. handle errors
+9.  handle errors
+10. implement authentication with jwt
 11. 
 12. create & import starter db
 13. implement query params
