@@ -182,15 +182,15 @@ To Do:
 6.  ~~connect to db~~
 7.  ~~set up controllers & routes structures~~
 8.  ~~set up mongoose & postman~~
-9.  ~~handle errors~~
-10. ~~set up schema models~~
-11. ~~hash password with bcryptjs~~
-12. ~~implement mongoose pre save~~
-13. ~~generate token with jwt & send response with token~~
-14. ~~set up schema methods~~
-15. ~~complete register controller~~
-16. complete login controller
-17. 
+9.  handle errors
+10. implement authentication with jwt
+11. 
+12. create & import starter db
+13. implement query params
+14. create user model
+15. set up register controller
+16. hash password with bcryptjs 
+17. set up login functionality
 18. authenticate routes
 19. create & import film db
 20. import models
