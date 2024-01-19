@@ -199,3 +199,5 @@ To Do:
 27. dynamically set authorization header
 28. handle mongoose validation errors
 29. swagger documentation?
+
+test gitignore
