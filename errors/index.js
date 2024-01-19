@@ -3,15 +3,15 @@
 // simply reference errors folder, index.js is the default export
 
 // require errors
-const CustomAPIError = require('./custom-api');
-const BadRequestError = require('./bad-request');
-const UnauthenticatedError = require('./unauthenticated');
-const NotFoundError = require('./not-found');
+const CustomAPIError = require("./custom-api");
+const BadRequestError = require("./bad-request");
+const UnauthenticatedError = require("./unauthenticated");
+const NotFoundError = require("./not-found");
 
 // export errors
 module.exports = {
   CustomAPIError,
   BadRequestError,
   UnauthenticatedError,
-  NotFoundError
+  NotFoundError,
 };
