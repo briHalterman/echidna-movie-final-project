@@ -9,6 +9,9 @@ const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
 
+// import model
+const User = require('../models/User');
+
 const register = async (req, res) => {
   // const { name, email, password } = req.body;
 
