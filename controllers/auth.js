@@ -2,10 +2,16 @@
 
 // import model
 const User = require('../models/user-model');
-const { StatusCodes } = require('http-status-codes')
+const { StatusCodes } = require('http-status-codes');
+const { BadRequestError } = require('../errors');
 
 const register = async (req, res) => {
   // res.send('register user');
+  const { username, email, password } = req.body;
+  if(!username || !email || !password){
+    throw new BadRequestError('Please provide username, email & password');
+  };
+
   const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
   res.status(StatusCodes.CREATED).json({ user });
 };
