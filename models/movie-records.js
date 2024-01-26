@@ -20,4 +20,4 @@ const MovieRecordSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('movie-record', MovieRecordSchema);
+module.exports = mongoose.model('movie-records', MovieRecordSchema);
