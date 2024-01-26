@@ -10,7 +10,7 @@ const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
 
 // import model
-const User = require('../models/user-model');
+const User = require('../models/users');
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError } = require('../errors');
 
