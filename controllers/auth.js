@@ -11,6 +11,7 @@ const { BadRequestError, UnauthenticatedError } = require('../errors');
 
 // import model
 const User = require('../models/user-model');
+const { StatusCodes } = require('http-status-codes')
 
 const register = async (req, res) => {
   // const { name, email, password } = req.body;
