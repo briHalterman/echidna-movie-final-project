@@ -25,4 +25,4 @@ const UserSchema = new mongoose.Schema({
   } // we will remove maxlength later, once we hash our password
 });
 
-module.exports = mongoose.model('user-model', UserSchema);
+module.exports = mongoose.model('users', UserSchema);

@@ -1,7 +1,7 @@
 // AUTHENTICATION CONTROLLER
 
 // import model
-const User = require('../models/user-model');
+const User = require('../models/users');
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError } = require('../errors');
 
