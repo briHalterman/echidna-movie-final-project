@@ -181,9 +181,9 @@ To Do:
 9.  ~~handle errors~~
 10. ~~schema models & methods~~
 11. ~~generate token with jwt~~
-12. hash password with bcryptjs
-13. dynamically set authorization header
-14. create user model
+12. authentication middleware
+13. hash password with bcryptjs
+14. dynamically set authorization header
 15. set up register controller
 16. create & import starter db 
 17. set up login functionality
