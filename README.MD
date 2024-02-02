@@ -179,7 +179,7 @@ To Do:
 7.  ~~set up controllers & routes structures~~
 8.  ~~set up mongoose & postman~~
 9.  ~~handle errors~~
-10. schema models & methods
+10. ~~schema models & methods~~
 11. generate token with jwt
 12. create & import starter db
 13. implement query params
@@ -199,5 +199,3 @@ To Do:
 27. dynamically set authorization header
 28. handle mongoose validation errors
 29. swagger documentation?
-
-test gitignore
