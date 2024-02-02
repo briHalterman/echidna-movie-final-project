@@ -180,12 +180,12 @@ To Do:
 8.  ~~set up mongoose & postman~~
 9.  ~~handle errors~~
 10. ~~schema models & methods~~
-11. generate token with jwt
-12. create & import starter db
-13. implement query params
+11. ~~generate token with jwt~~
+12. hash password with bcryptjs
+13. dynamically set authorization header
 14. create user model
 15. set up register controller
-16. hash password with bcryptjs 
+16. create & import starter db 
 17. set up login functionality
 18. authenticate routes
 19. set up models
@@ -196,6 +196,6 @@ To Do:
 24. EJS
 25. authentication middleware
 26. mongoose pre save & ObjectId
-27. dynamically set authorization header
+27. implement query params
 28. handle mongoose validation errors
 29. swagger documentation?
