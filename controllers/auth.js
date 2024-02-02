@@ -38,8 +38,18 @@ const login = async (req, res) => {
     throw new BadRequestError('No token provided') // "invalid credentials to access this route"
   }
 
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log(decoded);
+  } catch (error) {
+    throw new BadRequestError('Not authorized to access this route');
+  }
+
   // console.log(username, password);
-  console.log(req.headers);
+  // console.log(req.headers);
+  // console.log(token);
 
   res.status(200).send('login user');
 };
