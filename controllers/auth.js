@@ -21,6 +21,7 @@ const register = async (req, res) => {
   const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
 
   console.log(username, email, password);
+  // console.log(req.headers);
 
   res.status(StatusCodes.CREATED).json({ user, token });
 };
@@ -30,7 +31,15 @@ const login = async (req, res) => {
   if(!username || !password){
     throw new BadRequestError('Please provide username & password')
   }
-  console.log(username, password);
+
+  const authHeader = req.headers.authorization;
+
+  if(!authHeader || !authHeader.startsWith('Bearer ')){
+    throw new BadRequestError('No token provided') // "invalid credentials to access this route"
+  }
+
+  // console.log(username, password);
+  console.log(req.headers);
 
   res.status(200).send('login user');
 };
