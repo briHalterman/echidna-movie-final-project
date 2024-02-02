@@ -23,7 +23,7 @@ const register = async (req, res) => {
   console.log(username, email, password);
   // console.log(req.headers);
 
-  res.status(StatusCodes.CREATED).json({ user, token });
+  res.status(StatusCodes.CREATED).json({ msg: 'user created', user, token });
 };
 
 const login = async (req, res) => {
@@ -42,7 +42,9 @@ const login = async (req, res) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decoded);
+    // console.log(decoded);
+
+    res.status(200).json({ msg: `Hello, ${decoded.username}` });
   } catch (error) {
     throw new BadRequestError('Not authorized to access this route');
   }
@@ -50,8 +52,6 @@ const login = async (req, res) => {
   // console.log(username, password);
   // console.log(req.headers);
   // console.log(token);
-
-  res.status(200).send('login user');
 };
 
 module.exports = {
