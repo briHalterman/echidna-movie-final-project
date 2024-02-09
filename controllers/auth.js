@@ -1,13 +1,9 @@
 // AUTHENTICATION CONTROLLER
 
-// const jwt = require('jsonwebtoken');
-
 const User = require('../models/users'); // import model
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, UnauthenticatedError } = require('../errors');
-const bcrypt = require('bcryptjs');
-
-
+const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
   // const { username, email, password } = req.body;
@@ -16,23 +12,22 @@ const register = async (req, res) => {
   //   throw new BadRequestError('Please provide username, email & password');
   // };
 
-  // const salt = await bcrypt.genSalt(10);
-  // const hashedPassword = await bcrypt.hash(password, salt);
-
-  // const tempUser = { username, email, password:hashedPassword }
-
-  // const id = new Date().getDate(); //just for demo
-
-  // const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {expiresIn:'30d'});
-
   const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
   // const user = await User.create({ ...tempUser });
+
+  const token = jwt.sign(
+    { userId: user._id, name: user.username }, 
+    process.env.JWT_SECRET, 
+    {expiresIn:'30d'}
+  );
+
 
   // console.log(username, email, password);
   // console.log(req.headers);
 
   // res.status(StatusCodes.CREATED).json({ msg: 'user created', user, token });
-  res.status(StatusCodes.CREATED).json({ user });
+  // res.status(StatusCodes.CREATED).json({ user });
+  res.status(StatusCodes.CREATED).json({user: { name: user.username }, token });
 };
 
 const login = async (req, res) => {

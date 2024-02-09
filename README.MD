@@ -183,7 +183,7 @@ To Do:
 11. ~~hash password with bcryptjs~~
 12. ~~mongoose pre save~~
 13. generate token with jwt
-14. dynamically set authorization header
+14. send response with token
 15. set up register controller
 16. create & import starter db 
 17. set up login functionality
@@ -199,4 +199,4 @@ To Do:
 27. implement query params
 28. handle mongoose validation errors
 29. swagger documentation?
-30. authentication middleware
+30. dynamically set authorization header
