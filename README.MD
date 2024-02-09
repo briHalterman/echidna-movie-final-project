@@ -182,8 +182,8 @@ To Do:
 10. ~~schema models & methods~~
 11. ~~hash password with bcryptjs~~
 12. ~~mongoose pre save~~
-13. generate token with jwt
-14. send response with token
+13. ~~generate token with jwt & send response with token~~
+14. schema methods
 15. set up register controller
 16. create & import starter db 
 17. set up login functionality
