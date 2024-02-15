@@ -170,8 +170,8 @@ Features
 ~Delete button to remove movie entry
 
 To Do:
-1.  ~~project proposal~~
-2.  ~~wireframing~~
+1.  ~~submit project proposal~~
+2.  ~~wireframe project~~
 3.  ~~install dependencies & spin up nodemon~~
 4.  ~~set up basic file structure~~
 5.  ~~listen on server~~
@@ -179,23 +179,23 @@ To Do:
 7.  ~~set up controllers & routes structures~~
 8.  ~~set up mongoose & postman~~
 9.  ~~handle errors~~
-10. ~~schema models & methods~~
+10. ~~set up schema models~~
 11. ~~hash password with bcryptjs~~
-12. ~~mongoose pre save~~
+12. ~~implement mongoose pre save~~
 13. ~~generate token with jwt & send response with token~~
-14. schema methods
+14. set up schema methods
 15. set up register controller
 16. create & import starter db 
 17. set up login functionality
 18. authenticate routes
-19. set up models
+19. 
 20. import models
 21. implement CRUD functionality 
 22. add security packages
 23. deploy to render
-24. EJS
-25. authentication middleware
-26. mongoose ObjectId
+24. apply EJS
+25. implement authentication middleware
+26. implement mongoose ObjectId
 27. implement query params
 28. handle mongoose validation errors
 29. swagger documentation?
