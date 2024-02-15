@@ -169,6 +169,10 @@ Features
 ~Form to make or edit movies entries or cast/crew entries
 ~Delete button to remove movie entry
 
+Random key generator_
+https://acte.ltd/utils/randomkeygen
+Encryption key 256
+
 To Do:
 1.  ~~submit project proposal~~
 2.  ~~wireframe project~~
@@ -183,12 +187,12 @@ To Do:
 11. ~~hash password with bcryptjs~~
 12. ~~implement mongoose pre save~~
 13. ~~generate token with jwt & send response with token~~
-14. set up schema methods
-15. set up register controller
-16. create & import starter db 
+14. ~~set up schema methods~~
+15. ~~set up register controller~~
+16. set up login controller
 17. set up login functionality
 18. authenticate routes
-19. 
+19. create & import film db
 20. import models
 21. implement CRUD functionality 
 22. add security packages
@@ -200,3 +204,4 @@ To Do:
 28. handle mongoose validation errors
 29. swagger documentation?
 30. dynamically set authorization header
+
