@@ -188,9 +188,9 @@ To Do:
 12. ~~implement mongoose pre save~~
 13. ~~generate token with jwt & send response with token~~
 14. ~~set up schema methods~~
-15. ~~set up register controller~~
-16. set up login controller
-17. set up login functionality
+15. ~~complete register controller~~
+16. complete login controller
+17. 
 18. authenticate routes
 19. create & import film db
 20. import models

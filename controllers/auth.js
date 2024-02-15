@@ -76,7 +76,7 @@ const login = async (req, res) => {
   // send back user
   // res.status(StatusCodes.OK)
   res.status(StatusCodes.OK)
-  .json({ user: { name: user.name }, token});
+  .json({ user: { name: user.name }, token });
 
   // console.log(name, password);
   // console.log(req.headers);
