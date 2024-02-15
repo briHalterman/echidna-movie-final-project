@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
     required: [true, 'Please provide username'],
     minlength: 4,
@@ -34,7 +34,7 @@ UserSchema.pre('save', async function(next) {
 });
 
 // UserSchema.methods.getName = function () {
-//   return this.username;
+//   return this.name;
 // }
 
 UserSchema.methods.createJWT = function () {
@@ -45,4 +45,4 @@ UserSchema.methods.createJWT = function () {
   )
 };
 
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('user', UserSchema);
