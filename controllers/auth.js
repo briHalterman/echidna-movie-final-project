@@ -3,7 +3,7 @@
 const User = require('../models/users'); // import model
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, UnauthenticatedError } = require('../errors');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
   // const { username, email, password } = req.body;
@@ -15,19 +15,22 @@ const register = async (req, res) => {
   const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
   // const user = await User.create({ ...tempUser });
 
-  const token = jwt.sign(
-    { userId: user._id, name: user.username }, 
-    process.env.JWT_SECRET, 
-    {expiresIn:'30d'}
-  );
+  // const token = jwt.sign(
+  //   { userId: user._id, name: user.username }, 
+  //   process.env.JWT_SECRET, 
+  //   {expiresIn:'30d'}
+  // );
 
+  const token = user.createJWT();
 
   // console.log(username, email, password);
   // console.log(req.headers);
 
   // res.status(StatusCodes.CREATED).json({ msg: 'user created', user, token });
   // res.status(StatusCodes.CREATED).json({ user });
-  res.status(StatusCodes.CREATED).json({user: { name: user.getName() }, token });
+  res.status(StatusCodes.CREATED)
+  // .json({user: { name: user.getName() }, token });
+  .json({ user: { name: user.username }, token })
 };
 
 const login = async (req, res) => {
