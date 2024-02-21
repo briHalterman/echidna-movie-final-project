@@ -1,6 +1,6 @@
 // AUTHENTICATION CONTROLLER
 
-const User = require('../models/User.js'); // import model
+const User = require('../models/User.js'); // import user model
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
@@ -38,7 +38,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   // check for email and password values
-  if(!email || !password){
+  if(!email || !password) {
     // if missing, throw bad request error
     throw new BadRequestError('Please provide email & password')
   }
@@ -65,7 +65,14 @@ const login = async (req, res) => {
 
   // const token = authHeader.split(' ')[1];
 
-  if(!user){
+  if(!user) {
+    throw new UnauthenticatedError('Invalid Credentials');
+  }
+
+  // compare password using bcrypt library
+  const isPasswordCorrect = await user.comparePassword(password);
+
+  if(!isPasswordCorrect) {
     throw new UnauthenticatedError('Invalid Credentials');
   }
 
