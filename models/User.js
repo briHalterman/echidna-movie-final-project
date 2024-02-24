@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // store user name, email & hashed password in db
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please provide username'],
@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
 // Middleware (pre & post hooks) functions -- passed control during execution of async functions
 
 // hash the password
-UserSchema.pre('save', async function() {
+userSchema.pre('save', async function() {
   // generate salt (random bytes) by running genSalt & get password
   const salt = await bcrypt.genSalt(10); // pass in number of rounds
   // pass hash method
@@ -46,24 +46,24 @@ UserSchema.pre('save', async function() {
 // use function keyword (not arrow function syntax) so that the function is associated with "this" which is a user instance
 // reguar function (no async keyword)
 
-UserSchema.methods.getName = function () {
+userSchema.methods.getName = function () {
   return this.name;
-}
+};
 
-UserSchema.methods.createJWT = function () {
+userSchema.methods.createJWT = function () {
   return jwt.sign(
     // don't store secrets
     { userId: this._id, name: this.name }, // use underscore to differentiate IDs 
-    process.env.JWT_SECRET, 
+    process.env.JWT_SECRET,
     { expiresIn: process.env.JWT_LIFETIME }
   );
-}
+};
 
 // compare password coming in to password in document
-UserSchema.methods.comparePassword = async function (candidatePassword) {
+userSchema.methods.comparePassword = async function (candidatePassword) {
   // console.log(candidatePassword);
   const isMatch = await bcrypt.compare(candidatePassword, this.password);
   return isMatch;
-} // compare method - in bcrypt package - compares hashed passwords
+}; // compare method - in bcrypt package - compares hashed passwords
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('User', userSchema);
