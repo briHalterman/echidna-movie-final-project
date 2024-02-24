@@ -1,8 +1,9 @@
 // AUTHENTICATION CONTROLLER
+// use JSON web tokens (JWTs) for authenticating user
 
 const User = require('../models/User.js'); // import user model
-const { StatusCodes } = require('http-status-codes');
-const { BadRequestError, UnauthenticatedError } = require('../errors');
+const { StatusCodes } = require('http-status-codes'); // import status codes
+const { BadRequestError, UnauthenticatedError } = require('../errors'); // import errors
 // const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
@@ -12,6 +13,8 @@ const register = async (req, res) => {
   //   throw new BadRequestError('Please provide name, email & password');
   // };
 
+  // store user records in MongoDB
+  // NEVER EVER store user passwords as strings!
   const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
   // const user = await User.create({ ...tempUser });
 
@@ -34,12 +37,11 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  // initial check for email & password in controller
+  // check for email & password in controller
   const { email, password } = req.body;
 
-  // check for email and password values
+  // if missing email and/or password values throw bad request error
   if(!email || !password) {
-    // if missing, throw bad request error
     throw new BadRequestError('Please provide email & password')
   }
 
@@ -65,6 +67,7 @@ const login = async (req, res) => {
 
   // const token = authHeader.split(' ')[1];
 
+  // if user does not exist throw authentication error
   if(!user) {
     throw new UnauthenticatedError('Invalid Credentials');
   }
@@ -72,18 +75,15 @@ const login = async (req, res) => {
   // compare password using bcrypt library
   const isPasswordCorrect = await user.comparePassword(password);
 
+  // if password is incorrect throw authentication error
   if(!isPasswordCorrect) {
     throw new UnauthenticatedError('Invalid Credentials');
   }
 
-  // compare password
-
   const token = user.createJWT();
 
   // send back user
-  // res.status(StatusCodes.OK)
-  res.status(StatusCodes.OK)
-  .json({ user: { name: user.name }, token });
+  res.status(StatusCodes.OK).json({ user: { name: user.name }, token });
 
   // console.log(name, password);
   // console.log(req.headers);
