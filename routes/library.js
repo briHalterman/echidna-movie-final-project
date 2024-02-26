@@ -1,4 +1,6 @@
 // MOVIE LIBRARY ROUTER
+// protect ALL routes
+
 const express = require('express');
 const router = express.Router();
 

@@ -23,11 +23,14 @@ const authenticationMiddleware = async (req, res, next) => {
 
     // attach user to library routes
     req.user = { userId: payload.userId, name: payload.name }; // userId & name from what comes back from verification
+  
   } catch (error) {
     throw new UnauthenticatedError('Authentication invalid');
   };
-  // next();
+
+  // invoke next
+  next();
 };
 
-
+// export authentication middleware
 module.exports = authenticationMiddleware;
