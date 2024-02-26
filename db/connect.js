@@ -1,11 +1,14 @@
 // CONNECT TO DB
-const mongoose = require('mongoose'); // use mongoose
+
+// require mongoode
+const mongoose = require('mongoose');
 
 // set up connect and pass in url
 const connectDB = (url) => {
   return mongoose.connect(url, {});
 };
 
+// export connectDB
 module.exports = connectDB;
 
 //  Set up .env in the root

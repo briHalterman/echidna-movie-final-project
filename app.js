@@ -1,3 +1,5 @@
+// APPLICATION
+
 // require dotenv
 require('dotenv').config();
 // require express-async-errors
@@ -52,4 +54,5 @@ const start = async () => {
   } 
 };
 
+// 
 start();

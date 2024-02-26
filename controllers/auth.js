@@ -1,9 +1,12 @@
 // AUTHENTICATION CONTROLLER
 // use JSON web tokens (JWTs) for authenticating user
 
-const User = require('../models/User.js'); // import user model
-const { StatusCodes } = require('http-status-codes'); // import status codes
-const { BadRequestError, UnauthenticatedError } = require('../errors'); // import errors
+// import user model
+const User = require('../models/User.js');
+// import status codes
+const { StatusCodes } = require('http-status-codes');
+// import errors
+const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
@@ -90,6 +93,7 @@ const login = async (req, res) => {
   // console.log(token);
 };
 
+// export register & login controllers
 module.exports = {
   register,
   login

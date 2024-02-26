@@ -1,4 +1,6 @@
 // MOVIE RECORD
+
+// require mongoose
 const mongoose = require('mongoose');
 
 const MovieRecordSchema = new mongoose.Schema({
@@ -20,4 +22,5 @@ const MovieRecordSchema = new mongoose.Schema({
   }
 });
 
+// export movie record model
 module.exports = mongoose.model('movie-records', MovieRecordSchema);

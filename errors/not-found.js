@@ -1,5 +1,8 @@
 // NOT FOUND ERROR
+
+// require status codes package
 const { StatusCodes } = require('http-status-codes');
+// require custom API error
 const CustomAPIError = require('./custom-api');
 
 class NotFoundError extends CustomAPIError {
@@ -9,4 +12,5 @@ class NotFoundError extends CustomAPIError {
   };
 };
 
+// export not found error
 module.exports = NotFoundError;

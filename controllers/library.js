@@ -26,6 +26,7 @@ const removeMovie = async (req, res) => {
   res.status(200).json({ msg: 'remove movie' });
 };
 
+// export library controllers
 module.exports = {
   getAllMovies,
   getMovie,

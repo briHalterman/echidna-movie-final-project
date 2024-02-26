@@ -1,4 +1,6 @@
 // CATALOGUED MOVIE MODEL
+
+// require ongoose
 const mongoose = require('mongoose');
 
 const CataloguedMovieSchema = new mongoose.Schema({
@@ -20,4 +22,5 @@ const CataloguedMovieSchema = new mongoose.Schema({
   }
 });
 
+// export cataloqued movie model
 module.exports = mongoose.model('catalogued-movies', CataloguedMovieSchema);

@@ -1,6 +1,10 @@
 // USER MODEL
+
+// require mongoose
 const mongoose = require('mongoose');
+// require bcryptjs
 const bcrypt = require('bcryptjs');
+// require jsonwebtoken
 const jwt = require('jsonwebtoken');
 
 // store user name, email & hashed password in db
@@ -66,4 +70,5 @@ userSchema.methods.comparePassword = async function (candidatePassword) {
   return isMatch;
 }; // compare method - in bcrypt package - compares hashed passwords
 
+// export user model
 module.exports = mongoose.model('User', userSchema);
