@@ -13,7 +13,7 @@ const app = express();
 const connectDB = require('./db/connect');
 
 // require authentication middleware
-
+const authenticateUser = require('./middleware/authentication');
 
 // require routers
 const authRouter = require('./routes/auth');
@@ -35,7 +35,7 @@ app.use(express.json());
   //   res.send('movie library api');
   // });
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/library', libraryRouter);
+app.use('/api/v1/library', authenticateUser, libraryRouter); // place authentication middleware
 
 // invoke error handling
 app.use(notFoundMiddleware);
