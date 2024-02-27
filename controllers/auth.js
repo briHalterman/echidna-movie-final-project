@@ -2,22 +2,12 @@
 // use JSON web tokens (JWTs) for authenticating user
 
 // import user model
-const User = require('../models/User.js');
+const User = require('../models/user.js');
 // import status codes
 const { StatusCodes } = require('http-status-codes');
 // import bad request error & unauthenticated error (from errors)
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
-
-// import model
-const User = require('../models/users');
-const { StatusCodes } = require('http-status-codes');
-const { BadRequestError } = require('../errors');
-
-// import model
-const User = require('../models/users');
-const { StatusCodes } = require('http-status-codes');
-const { BadRequestError } = require('../errors');
 
 const register = async (req, res) => {
   // const { name, email, password } = req.body;
@@ -28,7 +18,7 @@ const register = async (req, res) => {
 
   // store user records in MongoDB
   // NEVER EVER store user passwords as strings!
-  const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
+  const user = await user.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
   // const user = await User.create({ ...tempUser });
 
   // const token = jwt.sign(
@@ -52,9 +42,6 @@ const register = async (req, res) => {
   if(!username || !email || !password){
     throw new BadRequestError('Please provide username, email & password');
   };
-
-  const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
-  res.status(StatusCodes.CREATED).json({ user });
 };
 
 const login = async (req, res) => {
