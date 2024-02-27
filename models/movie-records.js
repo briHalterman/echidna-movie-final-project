@@ -22,5 +22,5 @@ const MovieRecordSchema = new mongoose.Schema({
   }
 });
 
-// export movie record model
+// export movie record
 module.exports = mongoose.model('movie-records', MovieRecordSchema);

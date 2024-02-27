@@ -1,6 +1,6 @@
 // CATALOGUED MOVIE MODEL
 
-// require ongoose
+// require mongoose
 const mongoose = require('mongoose');
 
 const CataloguedMovieSchema = new mongoose.Schema({

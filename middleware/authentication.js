@@ -27,6 +27,12 @@ const authenticationMiddleware = async (req, res, next) => {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // attach user payload to library routes
     req.user = { userId: payload.userId, name: payload.name }; // name for testing
+
+    // Alternately:
+    // const user = User.findById(payload.id).select('-password); // select to remove password
+    // req.user = user;
+    // // no function to remove user anyway
+
   } catch (error) {
     throw new UnauthenticatedError('Authentication invalid');
   };
