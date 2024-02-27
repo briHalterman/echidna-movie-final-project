@@ -5,28 +5,28 @@
 const User = require('../models/User');
 // require jsonwebtoken
 const jwt = require('jsonwebtoken');
-// require unauthenticated error
+// require unauthenticated error (from errors)
 const { UnauthenticatedError } = require('../errors'); // index.js - don't need to specify beyond errors directory
 
 const authenticationMiddleware = async (req, res, next) => {
   // console.log(req.headers.authorization);
-  const authHeader = reg.headers.authorization;
 
   // check for authorization header & check if header starts with "Bearer "
     // space after "Bearer" is optional - after if statement, split token anyway
+  const authHeader = req.headers.authorization;
+  // if there is no auth header or if auth header doesn't start with "Bearer " throw authentication error
   if(!authHeader || !authHeader.startsWith('Bearer ')){
     throw new UnauthenticatedError('Authentication invalid');
   }
 
-  // split token
-  const token = authHeader.split(' ')[1]; // turn into array and look for second item in array
+  // split token into array on empty space
+  const token = authHeader.split(' ')[1]; // second item ([1])
 
   try {
+    // get payload
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-
-    // attach user to library routes
-    req.user = { userId: payload.userId, name: payload.name }; // userId & name from what comes back from verification
-  
+    // attach user payload to library routes
+    req.user = { userId: payload.userId, name: payload.name }; // name for testing
   } catch (error) {
     throw new UnauthenticatedError('Authentication invalid');
   };

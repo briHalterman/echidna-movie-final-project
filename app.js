@@ -9,16 +9,17 @@ require('express-async-errors');
 const express = require('express');
 const app = express();
 
-// connect DB
+// require connectDB
 const connectDB = require('./db/connect');
 
-// 
+// require authentication middleware
 
-// routers
+
+// require routers
 const authRouter = require('./routes/auth');
 const libraryRouter = require('./routes/library');
 
-// error handlers
+// require error handlers
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 

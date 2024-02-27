@@ -5,7 +5,7 @@
 const User = require('../models/User.js');
 // import status codes
 const { StatusCodes } = require('http-status-codes');
-// import errors
+// import bad request error & unauthenticated error (from errors)
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 // const jwt = require('jsonwebtoken');
 

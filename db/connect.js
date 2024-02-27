@@ -1,6 +1,6 @@
 // CONNECT TO DB
 
-// require mongoode
+// require mongoose
 const mongoose = require('mongoose');
 
 // set up connect and pass in url
