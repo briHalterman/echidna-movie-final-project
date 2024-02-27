@@ -2,7 +2,7 @@
 // use authentication middleware to protect routes
 
 // require user model
-const User = require('../models/User');
+const User = require('../models/user');
 // require jsonwebtoken
 const jwt = require('jsonwebtoken');
 // require unauthenticated error (from errors)
