@@ -1,4 +1,9 @@
 // MOVIE LIBRARY CONTROLLER
+// only deal with resources as they are associated with a user
+// implement CRUD (Create, Read, Update, Delete) funtionality
+
+// create imports
+
 
 const getAllMovies = async (req, res) => {
   // throw new Error('testing async errors');
@@ -21,6 +26,7 @@ const removeMovie = async (req, res) => {
   res.status(200).json({ msg: 'remove movie' });
 };
 
+// export library controllers
 module.exports = {
   getAllMovies,
   getMovie,

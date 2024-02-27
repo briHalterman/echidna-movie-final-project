@@ -14,7 +14,7 @@ Second, the purpose is for you to demonstrate that you know Node and Express, so
 
 Goal of the Application
 
-The goal of the project is to showcase what you have learned during class. You will have the opportunity to demonstrate your knowledge and creativity. You are required to create an Express application from scratch. It should  give you an opportunity to demonstrate creativity, which is important as a developer. You may find that you want to use some concepts, technologies, or npm packages we didn’t cover, which is worth some extra points so long as it doesn’t get too hard. Although you will need to keep your final project simple, think about an application you might want to create eventually. Perhaps you could implement some subset or feature of this future application.
+The goal of the project is to showcase what you have learned during class. You will have the opportunity to demonstrate your knowledge and creativity. You are required to create an Express application from scratch. It should give you an opportunity to demonstrate creativity, which is important as a developer. You may find that you want to use some concepts, technologies, or npm packages we didn’t cover, which is worth some extra points so long as it doesn’t get too hard. Although you will need to keep your final project simple, think about an application you might want to create eventually. Perhaps you could implement some subset or feature of this future application.
 
 There are two options for building the project. You can build it with a front end that calls back end APIs with fetch() calls (full stack). Or, you can build it using server side rendering with the EJS templating language. Either choice is fine.
 
@@ -22,7 +22,7 @@ If you choose the full stack option, you can build the front end using ordinary 
 
 Requirements for the Project (Rubric)
 
-1. Create a Node/Express application from scratch using the MongoDB database. It must contain the following elements: 
+1. Create a Node/Express application from scratch using the MongoDB database. It must contain the following elements:
 
 Models & Controllers
 
@@ -54,7 +54,7 @@ Deployment
 
 Bonus Items (these are entirely optional)
 
-19. Do something extra.  This could be the implementation of a more complicated data model, or use of additional NPM packages, callouts to other public APIs, or whatever your creativity inspires.
+19. Do something extra. This could be the implementation of a more complicated data model, or use of additional NPM packages, callouts to other public APIs, or whatever your creativity inspires.
 20. Implement some test cases using Mocha, Chai, and Puppeteer.
 21. For full stack applications, implement Swagger to document the API.
 
@@ -66,6 +66,7 @@ Highly-scalable, data-intensive & real-time apps
 Comes with a bunch of useful modules
 
 Benefits of Node:
+
 - Great for prototyping & agile development
 - Superfast & highly scalable
 - JavaScript
@@ -128,7 +129,7 @@ Project Concept
 
 I would like to build a simple Express application that allows users to catalog movies. The application will allow users to sign-up and log in. Users can create, view, edit and delete movie entries. Users also can view and sort their entire list of movies. Ideally, I would want users to be able to search all movie entries from all users and choose to copy others’ movie entries to their own personal “libraries.” The ability to rate movies would also be a great feature.
 
-I look forward to building this project out more in the future. I would like to incorporate nested data models to include information about individual cast and crew members. Different pages could be made for studios and genres. A way of crowdsourcing the entire catalog of entries such as requesting edits, updating information and removing duplicates would be great core feature to implement. User profiles would be nice, with avatars and user stats. I could also add a way of flipping through alternative cover images, titles, etc. This  is all a bit too much for this project, but I like that I am working on something that I can keep working on after this class. 
+I look forward to building this project out more in the future. I would like to incorporate nested data models to include information about individual cast and crew members. Different pages could be made for studios and genres. A way of crowdsourcing the entire catalog of entries such as requesting edits, updating information and removing duplicates would be great core feature to implement. User profiles would be nice, with avatars and user stats. I could also add a way of flipping through alternative cover images, titles, etc. This is all a bit too much for this project, but I like that I am working on something that I can keep working on after this class.
 
 Data Models
 
@@ -143,7 +144,7 @@ Movie entry:
 -Director
 -Genre
 -Studio
--Rating (personal & average among users) 
+-Rating (personal & average among users)
 
 Nested data model for cast and crew:
 -First name
@@ -169,9 +170,14 @@ Features
 ~Form to make or edit movies entries or cast/crew entries
 ~Delete button to remove movie entry
 
+Random key generator\_
+https://acte.ltd/utils/randomkeygen
+Encryption key 256
+
 To Do:
-1.  ~~project proposal~~
-2.  ~~wireframing~~
+
+1.  ~~submit project proposal~~
+2.  ~~wireframe project~~
 3.  ~~install dependencies & spin up nodemon~~
 4.  ~~set up basic file structure~~
 5.  ~~listen on server~~
@@ -181,23 +187,27 @@ To Do:
 9.  ~~handle errors~~
 10. schema models & methods
 11. generate token with jwt
+9.  ~~handle errors~~
+10. schema models & methods
+11. generate token with jwt
 12. create & import starter db
 13. implement query params
 14. create user model
 15. set up register controller
-16. hash password with bcryptjs 
+16. hash password with bcryptjs
 17. set up login functionality
 18. authenticate routes
-19. set up models
+19. create & import film db
 20. import models
-21. implement CRUD functionality 
+21. implement CRUD functionality
 22. add security packages
 23. deploy to render
-24. EJS
-25. authentication middleware
-26. mongoose pre save & ObjectId
-27. dynamically set authorization header
+24. apply EJS
+25. implement authentication middleware
+26. implement mongoose ObjectId
+27. implement query params
 28. handle mongoose validation errors
 29. swagger documentation?
+30. dynamically set authorization header
 
 test gitignore

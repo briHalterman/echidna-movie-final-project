@@ -1,36 +1,49 @@
+// APPLICATION
+
 // require dotenv
-require('dotenv').config();
+require("dotenv").config();
 // require express-async-errors
-require('express-async-errors');
+require("express-async-errors");
+
 // require and invoke express
-const express = require('express');
+const express = require("express");
 const app = express();
 
-// connect DB
-const connectDB = require('./db/connect');
+// require connectDB
+const connectDB = require("./db/connect");
 
-// routers
-const authRouter = require('./routes/auth');
-const libraryRouter = require('./routes/library');
+// require authentication middleware
+const authenticateUser = require("./middleware/authentication");
 
-// error handlers
-const notFoundMiddleware = require('./middleware/not-found');
-const errorHandlerMiddleware = require('./middleware/error-handler');
+// require routers
+const authRouter = require("./routes/auth");
+const libraryRouter = require("./routes/library");
+
+// require error handlers
+const notFoundMiddleware = require("./middleware/not-found");
+const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // configure express.json()
 app.use(express.json());
 
 // extra security packages
 
+// extra security packages
 
 // routes
-  // route for handling get request for path /
-  // app.get('/', (req, res) => {
-  //   res.send('movie library api');
-  // });
-app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/library', libraryRouter);
+// route for handling get request for path /
+// app.get('/', (req, res) => {
+//   res.send('movie library api');
+// });
+// route for handling get request for path /
+// app.get('/', (req, res) => {
+//   res.send('movie library api');
+// });
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/library", authenticateUser, libraryRouter); // place authentication middleware
 
+// invoke error handling
+app.use(notFoundMiddleware);
 // invoke error handling
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -42,11 +55,13 @@ const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI) // connect to DB
-    app.listen(port, console.log(`server is listening on port ${port}...`))
+    await connectDB(process.env.MONGO_URI); // connect to DB
+    await connectDB(process.env.MONGO_URI); // connect to DB
+    app.listen(port, console.log(`server is listening on port ${port}...`));
   } catch (error) {
     console.log(error);
-  } 
+  }
 };
 
+//
 start();
