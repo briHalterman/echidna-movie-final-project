@@ -187,6 +187,9 @@ To Do:
 9.  ~~handle errors~~
 10. schema models & methods
 11. generate token with jwt
+9.  ~~handle errors~~
+10. schema models & methods
+11. generate token with jwt
 12. create & import starter db
 13. implement query params
 14. create user model

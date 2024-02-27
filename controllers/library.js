@@ -12,7 +12,6 @@ const getAllMovies = async (req, res) => {
 
 const getMovie = async (req, res) => {
   res.status(200).json({ msg: 'get individual movie'});
-  res.status(200).json({ msg: 'get individual movie'});
 };
 
 const createMovie = async (req, res) => {
@@ -21,11 +20,9 @@ const createMovie = async (req, res) => {
 
 const updateMovie = async (req, res) => {
   res.status(200).json({ msg: 'update movie' });
-  res.status(200).json({ msg: 'update movie' });
 };
 
 const removeMovie = async (req, res) => {
-  res.status(200).json({ msg: 'remove movie' });
   res.status(200).json({ msg: 'remove movie' });
 };
 

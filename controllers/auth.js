@@ -14,6 +14,11 @@ const User = require('../models/users');
 const { StatusCodes } = require('http-status-codes');
 const { BadRequestError } = require('../errors');
 
+// import model
+const User = require('../models/users');
+const { StatusCodes } = require('http-status-codes');
+const { BadRequestError } = require('../errors');
+
 const register = async (req, res) => {
   // const { name, email, password } = req.body;
 
@@ -42,6 +47,14 @@ const register = async (req, res) => {
   res.status(StatusCodes.CREATED)
   // .json({user: { name: user.getName() }, token });
   .json({ user: { name: user.name }, token })
+  // res.send('register user');
+  const { username, email, password } = req.body;
+  if(!username || !email || !password){
+    throw new BadRequestError('Please provide username, email & password');
+  };
+
+  const user = await User.create({ ...req.body }); // !!! temporarily saving passwords as strings --- very bad practice
+  res.status(StatusCodes.CREATED).json({ user });
 };
 
 const login = async (req, res) => {
