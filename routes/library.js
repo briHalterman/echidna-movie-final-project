@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 // import library controllers
 const {
-  getAllMovies,
+  getUserMovies,
   getMovie,
   createMovie,
   updateMovie,
@@ -14,7 +14,7 @@ const {
 } = require('../controllers/library');
 
 // syntax option 2 (personal preference)
-router.route('/').post(createMovie).get(getAllMovies); // domain/api/v1/library
+router.route('/').post(createMovie).get(getUserMovies); // domain/api/v1/library
 router.route('/:id').get(getMovie).delete(removeMovie).patch(updateMovie); // domain/api/v1/library/:id
 
 // export router

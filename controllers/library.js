@@ -10,14 +10,15 @@ const { StatusCodes } = require('http-status-codes');
 const { BadRequestError, NotFoundError } = require('../errors');
 
 // get all movies route controller (read)
-const getAllMovies = async (req, res) => {
-  // respond
-  res.status(200).json({ msg: 'get all movies' });
+const getUserMovies = async (req, res) => {
+  const movies = await MovieRecord.find({ createdBy:req.user.userId }).sort('createdAt');
+  // response:
+  res.status(StatusCodes.OK).json({ movies, count: movies.length });
 };
 
 // get individual movie route controller (read)
 const getMovie = async (req, res) => {
-  // respond
+  // response:
   res.status(200).json({ msg: 'get individual movie'});
 };
 
@@ -27,25 +28,25 @@ const createMovie = async (req, res) => {
   req.body.createdBy = req.user.userId;
   // create new movie record
   const movie = await MovieRecord.create(req.body);
-  // respond
-  res.status(200).json({ movie });
+  // response:
+  res.status(StatusCodes.CREATED).json({ movie });
 };
 
 // update movie route controller (update)
 const updateMovie = async (req, res) => {
-  // respond
+  // response: 
   res.status(200).json({ msg: 'update movie' });
 };
 
 // delete movie route controller (destroy)
 const removeMovie = async (req, res) => {
-  // respond
+  // response:
   res.status(200).json({ msg: 'remove movie' });
 };
 
 // export library controllers
 module.exports = {
-  getAllMovies,
+  getUserMovies,
   getMovie,
   createMovie,
   updateMovie,

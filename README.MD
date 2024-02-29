@@ -277,7 +277,8 @@ The Founder
 Willy Wonka & The Chocolate Factory
 The Bob's Burgers Movie
 Cheddar
-The Wacky Adventures of Ronald McDonald 
+The Wacky Adventures of Ronald McDonald*
+John Ratzenburger*
 
 To Do:
 
