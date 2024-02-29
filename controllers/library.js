@@ -18,8 +18,15 @@ const getUserMovies = async (req, res) => {
 
 // get individual movie route controller (read)
 const getMovie = async (req, res) => {
+  const { user: { userId }, params: { id: movieId } } = req;
+  const movie = await MovieRecord.findOne({
+    _id: movieId, createdBy: userId
+  });
+  if(!movie) {
+    throw new NotFoundError(`No movie with id ${ movieId }`);
+  }
   // response:
-  res.status(200).json({ msg: 'get individual movie'});
+  res.status(StatusCodes.OK).json({ movie });
 };
 
 // create movie route controller (create)
