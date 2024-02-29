@@ -185,7 +185,7 @@ Boxtrolls
 The Borrowers
 I Want Somoeone to Eat Cheese With
 Spy Fox in Dry Cereal*
-Master of Cheese
+Les maîtres du fromage
 Pulp Fiction
 Nobody Else But You
 Cheese Chasers
@@ -300,11 +300,11 @@ To Do:
 14. ~~create user model~~
 15. ~~authenticate routes~~
 16. ~~hash password with bcryptjs~~
-17. 
+17. ~~implement CRUD functionality~~
 18. implement query params
 19. create & import film db
 20. import models
-21. implement CRUD functionality
+21. 
 22. add security packages
 23. deploy to render
 24. apply EJS
