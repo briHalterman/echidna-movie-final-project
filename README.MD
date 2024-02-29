@@ -174,6 +174,82 @@ Random key generator\_
 https://acte.ltd/utils/randomkeygen
 Encryption key 256
 
+Cheese Movies:
+Title                                       Director                                    Year    Catagory
+Mousehunt
+Ratatouille
+Wallace & Gromit: A Grand Day Out
+Boxtrolls
+The Borrowers
+I Want Somoeone to Eat Cheese With
+Spy Fox in Dry Cereal*
+Master of Cheese
+Pulp Fiction
+Nobody Else But You
+Cheese Chasers
+Tom & Jerry: Somebody Loves Me
+Diary of a Wimpy Kid
+Tom & Jerry: Advance & Be Mechanized
+Cheese Burglar
+Tom & Jerry: Tall in the Trap
+Government Cheese
+Maison du Bonheur
+Ces fromages qu'on assassine
+Chuck E. Cheese in The Galaxy 5000
+Teenage Mutant Ninja Turtles
+A Goofy Movie
+The Wind Blows Round
+An American Tail
+I Am the Cheese
+Benny & Joon
+Kajmak in marmelada, Cheese & Jam
+Cara de Queso
+The Cheese Factory in the Hamlet
+Cheese in the Trap
+Chef
+Eat Pray Love
+No Reservations
+Julie & Julia
+Comme un Chef
+Chocolat
+The Menu
+Eddie's Million Dollar Cook-Off
+Harold & Kumar Go to White Castle
+Good Burger
+Clerks 2
+Clerks
+Supersize Me
+The Grand Budapest Hotel
+Burn After Reading
+Coraline
+The Emperor's New Groove
+Sausage Party
+James & The Giant Peach
+Borat
+Charlotte's Web
+Babe
+A Trip to the Moon
+Waiting
+Cow
+Barnyard
+Twister
+Marie Antoinette
+She's the Man
+Delicious
+Erin Brokovich
+IT (parts)
+Cow Belles
+The Prince & Me
+Kate & Leopold
+Cheese
+The Breakfast Club
+Kill Bill: Volume 2
+The Devil Wears Prada
+Pizza: A Love Story
+Mystic Pizza
+Pizza Shop: An Italian-American Dream
+Flowers for Algernon
+
 To Do:
 
 1.  ~~submit project proposal~~
@@ -187,13 +263,13 @@ To Do:
 9.  ~~handle errors~~
 10. ~~schema models & methods~~
 11. ~~generate token with jwt~~
-12. create & import starter db
-13. implement query params
-14. create user model
-15. ~~set up register functionality~~
+12. ~~set up register functionality~~
+13. ~~set up login functionality~~
+14. ~~create user model~~
+15. ~~authenticate routes~~
 16. ~~hash password with bcryptjs~~
-17. set up login functionality
-18. ~~authenticate routes~~
+17. 
+18. implement query params
 19. create & import film db
 20. import models
 21. implement CRUD functionality
@@ -207,4 +283,3 @@ To Do:
 29. swagger documentation?
 30. dynamically set authorization header
 
-test gitignore
