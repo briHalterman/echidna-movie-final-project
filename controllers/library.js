@@ -68,8 +68,21 @@ const updateMovie = async (req, res) => {
 
 // delete movie route controller (destroy)
 const removeMovie = async (req, res) => {
+  const {
+    user: { userId },
+    params: { id: movieId },
+  } = req;
+
+  const movie = await MovieRecord.findByIdAndDelete({
+    _id: movieId,
+    createdBy: userId
+  });
+
+  if (!movie) {
+    throw new NotFoundError(`No movie with id ${movieId}`);
+  }
   // response:
-  res.status(200).json({ msg: "remove movie" });
+  res.status(StatusCodes.OK).send();
 };
 
 // export library controllers
