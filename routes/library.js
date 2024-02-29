@@ -13,7 +13,7 @@ const {
   removeMovie
 } = require('../controllers/library');
 
-// syntax option 2 (my preference)
+// syntax option 2 (personal preference)
 router.route('/').post(createMovie).get(getAllMovies); // domain/api/v1/library
 router.route('/:id').get(getMovie).delete(removeMovie).patch(updateMovie); // domain/api/v1/library/:id
 
