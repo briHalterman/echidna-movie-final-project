@@ -4,15 +4,12 @@
 require("dotenv").config();
 // require express-async-errors
 require("express-async-errors");
-
 // require and invoke express
 const express = require("express");
 const app = express();
-
-// require connectDB
+// import connectDB
 const connectDB = require("./db/connect");
-
-// require authentication middleware
+// import authentication middleware
 const authenticateUser = require("./middleware/authentication");
 
 // require routers
@@ -55,7 +52,6 @@ const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI); // connect to DB
     await connectDB(process.env.MONGO_URI); // connect to DB
     app.listen(port, console.log(`server is listening on port ${port}...`));
   } catch (error) {

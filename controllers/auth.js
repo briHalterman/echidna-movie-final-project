@@ -3,19 +3,19 @@
 
 // import user model
 const User = require('../models/User.js');
-// import status codes package
+// require status codes package
 const { StatusCodes } = require('http-status-codes');
 // import bad request error & unauthenticated error (from errors)
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 
+// register controller
 const register = async (req, res) => {
   // if(!name || !email || !password){
   //   throw new BadRequestError('Please provide name, email & password');
   // };
 
   // store user records in MongoDB
-  // NEVER EVER store user passwords as strings!
-  const user = await User.create({ ...req.body });
+  const user = await User.create({ ...req.body }); // NEVER EVER store user passwords as strings!
 
   const token = user.createJWT();
   // console.log(User);
@@ -23,9 +23,11 @@ const register = async (req, res) => {
   console.log(req.body);
   // console.log(req.headers);
 
+  // response:
   res.status(StatusCodes.CREATED).json({ user: { name: user.name }, token });
 };
 
+// login controller
 const login = async (req, res) => {
   // check for email & password in controller
   const { email, password } = req.body;
@@ -51,9 +53,10 @@ const login = async (req, res) => {
     throw new UnauthenticatedError('Invalid Credentials');
   }
 
+  // 
   const token = user.createJWT();
 
-  // send back user
+  // response:
   res.status(StatusCodes.OK).json({ user: { name: user.name }, token });
 
   // console.log(name, password);

@@ -1,11 +1,11 @@
 // Authentication Middleware
 // use authentication middleware to protect routes
 
-// require user model
+// import user model
 const User = require('../models/User');
 // require jsonwebtoken
 const jwt = require('jsonwebtoken'); // verify token
-// require unauthenticated error (from errors)
+// import unauthenticated error (from errors)
 const { UnauthenticatedError } = require('../errors'); // index.js - don't need to specify beyond errors directory
 
 // middleware

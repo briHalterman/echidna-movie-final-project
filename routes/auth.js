@@ -3,7 +3,7 @@
 // require & invoke express
 const express = require('express');
 const router = express.Router();
-// require login & register controllers
+// import login & register controllers
 const { login, register } = require('../controllers/auth');
 
 // set up routes
