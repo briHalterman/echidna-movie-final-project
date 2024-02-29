@@ -16,7 +16,7 @@ const getMovie = async (req, res) => {
 
 const createMovie = async (req, res) => {
   // res.status(200).json({ msg: 'create movie' });
-  res.json(req.user);
+  res.status(200).json(req.body);
 };
 
 const updateMovie = async (req, res) => {
