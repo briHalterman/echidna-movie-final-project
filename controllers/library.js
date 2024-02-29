@@ -3,27 +3,33 @@
 // implement CRUD (Create, Read, Update, Destroy) funtionality
 
 // import movie record model
-const MovieRecord = require('../models/movie-record');
+const MovieRecord = require("../models/movie-record");
 // require status codes package
-const { StatusCodes } = require('http-status-codes');
+const { StatusCodes } = require("http-status-codes");
 // import errors
-const { BadRequestError, NotFoundError } = require('../errors');
+const { BadRequestError, NotFoundError } = require("../errors");
 
 // get all movies route controller (read)
 const getUserMovies = async (req, res) => {
-  const movies = await MovieRecord.find({ createdBy:req.user.userId }).sort('createdAt');
+  const movies = await MovieRecord.find({ createdBy: req.user.userId }).sort(
+    "createdAt"
+  );
   // response:
   res.status(StatusCodes.OK).json({ movies, count: movies.length });
 };
 
 // get individual movie route controller (read)
 const getMovie = async (req, res) => {
-  const { user: { userId }, params: { id: movieId } } = req;
+  const {
+    user: { userId },
+    params: { id: movieId },
+  } = req;
   const movie = await MovieRecord.findOne({
-    _id: movieId, createdBy: userId
+    _id: movieId,
+    createdBy: userId,
   });
-  if(!movie) {
-    throw new NotFoundError(`No movie with id ${ movieId }`);
+  if (!movie) {
+    throw new NotFoundError(`No movie with id ${movieId}`);
   }
   // response:
   res.status(StatusCodes.OK).json({ movie });
@@ -41,14 +47,29 @@ const createMovie = async (req, res) => {
 
 // update movie route controller (update)
 const updateMovie = async (req, res) => {
-  // response: 
-  res.status(200).json({ msg: 'update movie' });
+  const {
+    body: { title, director },
+    user: { userId },
+    params: { id: movieId },
+  } = req;
+
+  if (title === '' || director === '') {
+    throw new BadRequestError('Title & Director fields cannot be empty')
+  }
+
+  const movie = await MovieRecord.findOneAndUpdate({ _id: movieId, createdBy: userId }, req.body, { new: true, runValidators: true });
+
+  if (!movie) {
+    throw new NotFoundError(`No movie with id ${movieId}`);
+  }
+  // response:
+  res.status(StatusCodes.OK).json({ movie });
 };
 
 // delete movie route controller (destroy)
 const removeMovie = async (req, res) => {
   // response:
-  res.status(200).json({ msg: 'remove movie' });
+  res.status(200).json({ msg: "remove movie" });
 };
 
 // export library controllers
@@ -57,5 +78,5 @@ module.exports = {
   getMovie,
   createMovie,
   updateMovie,
-  removeMovie
+  removeMovie,
 };

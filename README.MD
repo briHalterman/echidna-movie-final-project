@@ -174,6 +174,8 @@ Random key generator\_
 https://acte.ltd/utils/randomkeygen
 Encryption key 256
 
+Patch vs Put
+
 Cheese Movies:
 Title                                       Director                                    Year    Catagory
 Mousehunt
