@@ -1,6 +1,6 @@
 // ERROR HANDLER MIDDLEWARE
 
-// require custom API error (from errors)
+// import custom API error (from errors)
 const { CustomAPIError } = require("../errors");
 // require status codes package
 const { StatusCodes } = require("http-status-codes");

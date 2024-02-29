@@ -1,6 +1,6 @@
 // BAD REQUEST ERROR
 
-// require custom API error
+// import custom API error
 const CustomAPIError = require("./custom-api");
 // require status codes package
 const { StatusCodes } = require("http-status-codes");

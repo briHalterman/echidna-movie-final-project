@@ -38,13 +38,15 @@ const UserSchema = new mongoose.Schema({
 
 // hash password before saving the document
 UserSchema.pre('save', async function() {
+  // generate salt
   const salt = await bcrypt.genSalt(10);
+  // hash password
   this.password = await bcrypt.hash(this.password, salt);
 });
 
 // schemas instance methods
   // regular function (no async keyword)
-  // use function keyword (not arrow function) - so 'this' will always point to the documents
+  // use function keyword (not arrow function) - so 'this' will scope to document
   UserSchema.methods.getName = function () {
     return this.name;
   };

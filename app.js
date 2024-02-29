@@ -4,15 +4,12 @@
 require("dotenv").config();
 // require express-async-errors
 require("express-async-errors");
-
 // require and invoke express
 const express = require("express");
 const app = express();
-
-// require connectDB
+// import connectDB
 const connectDB = require("./db/connect");
-
-// require authentication middleware
+// import authentication middleware
 const authenticateUser = require("./middleware/authentication");
 
 // require routers
