@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 // set up connect and pass in url
 const connectDB = (url) => {
-  return mongoose.connect(url, {});
+  return mongoose.connect(url, {}); // option to remove depreciation warnings not needed
 };
 
 // export connectDB

@@ -2,12 +2,13 @@
 // use authentication middleware to protect routes
 
 // require user model
-const User = require('../models/user');
+const User = require('../models/User');
 // require jsonwebtoken
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); // verify token
 // require unauthenticated error (from errors)
 const { UnauthenticatedError } = require('../errors'); // index.js - don't need to specify beyond errors directory
 
+// middleware
 const authenticationMiddleware = async (req, res, next) => {
   // console.log(req.headers.authorization);
 
@@ -19,13 +20,13 @@ const authenticationMiddleware = async (req, res, next) => {
     throw new UnauthenticatedError('Authentication invalid');
   }
 
-  // split token into array on empty space
-  const token = authHeader.split(' ')[1]; // second item ([1])
+  // split auth header into array on empty space to get token
+  const token = authHeader.split(' ')[1]; // second item in array ([1])
 
   try {
     // get payload
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    // attach user payload to library routes
+    // attach user payload to library routes, user id and name from what comes back verify
     req.user = { userId: payload.userId, name: payload.name }; // name for testing
 
     // Alternately:
@@ -33,11 +34,15 @@ const authenticationMiddleware = async (req, res, next) => {
     // req.user = user;
     // // no function to remove user anyway
 
+    // // invoke next to get to library
+    // next();
+  
+  // 
   } catch (error) {
     throw new UnauthenticatedError('Authentication invalid');
   };
 
-  // invoke next
+  // invoke next to get to library
   next();
 };
 
