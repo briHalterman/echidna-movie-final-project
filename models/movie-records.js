@@ -20,7 +20,17 @@ const MovieRecordSchema = new mongoose.Schema({
     max: 2034,
     // var maxYear = currentTime.getFullYear() + 10
   },
-});
+  catagory: {
+    type: String,
+    enum: ['catagory', 'narrative', 'avant-garde', 'documentary'],
+    default: 'pending'
+  },
+  createdBy: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'Please provide user']
+  }
+}, { timestamps: true });
 
-// export movie record
-module.exports = mongoose.model("movie-records", MovieRecordSchema);
+// export movie record model schema
+module.exports = mongoose.model("MovieRecord", MovieRecordSchema);
