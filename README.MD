@@ -249,6 +249,35 @@ Pizza: A Love Story
 Mystic Pizza
 Pizza Shop: An Italian-American Dream
 Flowers for Algernon
+Shaun the Sheep
+The Men Who Stare at Goats
+Artois the Goat
+The Hunchback of Notre Dame
+Hunger Games
+Heidi
+The Simpsons Movie
+Cloudy with a Chance of Meatballs
+More than Chocolate & Cheese
+The Cheese Mites
+The Pizza City You've Never Heard Of
+Arrietty
+Dream of Italy
+The Witches
+Paris, Wine & Romance
+The Case of the Tainted Cheese Curds
+Cheeseheads
+Mere Brother Ki Dulhan
+The Emissary
+Small Town, Wisconsin
+Sideways
+Food, Inc.
+Little Italy
+My Big Fat Greek Wedding
+The Founder
+Willy Wonka & The Chocolate Factory
+The Bob's Burgers Movie
+Cheddar
+The Wacky Adventures of Ronald McDonald 
 
 To Do:
 

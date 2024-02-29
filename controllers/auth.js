@@ -8,6 +8,7 @@ const { StatusCodes } = require('http-status-codes');
 // import bad request error & unauthenticated error (from errors)
 const { BadRequestError, UnauthenticatedError } = require('../errors');
 
+// register controller
 const register = async (req, res) => {
   // if(!name || !email || !password){
   //   throw new BadRequestError('Please provide name, email & password');
@@ -26,6 +27,7 @@ const register = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ user: { name: user.name }, token });
 };
 
+// login controller
 const login = async (req, res) => {
   // check for email & password in controller
   const { email, password } = req.body;

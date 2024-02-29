@@ -3,6 +3,7 @@
 // require mongoose
 const mongoose = require("mongoose");
 
+// movie record model schema
 const MovieRecordSchema = new mongoose.Schema({
   title: {
     type: String,
