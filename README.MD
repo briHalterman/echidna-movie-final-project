@@ -183,6 +183,37 @@ Patch vs Put
 - xss-clean
 - express-rate-limit
 
+// SECURITY
+
+// When you deploy to the Internet, you need to be confident that your application is secure. In your case, the risk is very small, because you aren’t storing or retrieving sensitive information. This is fortunate, because security is hard — very hard. The packages the instructor specifies are good starting points.
+
+// security configuration uses the following node packages:
+
+// helmet:    
+// most popular
+// prevents numerous attacks
+// sets headers on your HTML pages to limit what script the pages will load
+// provides additional protection against cross site scripting
+// quite tricky to configure for a front end (particularly if the front end uses resources to style the application such as Bootstrap)
+
+// cors:
+// not really about security   
+// Cross Origin Resource Sharing
+// allows one web application to call another, subject to configuration limits
+// ensures API is accessable from different domain
+
+// xss-clean: 
+// sanitizes user input to req.body, req.query, req.params
+// averts cross side scripting attacks
+// protects against when an attacker is able to insert some JavaScript into your application and have your application run that script, potentially getting access to resources managed by the application - can happen when a script is inserted into a URL that calls the application, or into a REST request, or into an HTML form
+// xss-clean package strips those scripts out
+
+// express-rate-limit:
+// limits the number of requests that can be issued per minute from a given client
+// attackers can’t cause application problems by brute force
+
+// packages must be used whenever an application is deployed publicly to minimize the chance of a security exposure
+
 Cheese Movies:
 Title                                       Director                                    Year    Catagory
 Mousehunt
