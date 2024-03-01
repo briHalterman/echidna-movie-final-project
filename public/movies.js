@@ -30,9 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const moviesTableHeader = document.getElementById("movies-table-header");
   const addmovie = document.getElementById("add-movie");
   const editmovie = document.getElementById("edit-movie");
-  const company = document.getElementById("company");
-  const position = document.getElementById("position");
-  const status = document.getElementById("status");
+  const title = document.getElementById("title");
+  const director = document.getElementById("director");
+  const year = document.getElementById("year");
+  const catagory = document.getElementById("catagory");
   const addingmovie = document.getElementById("adding-movie");
   const moviesMessage = document.getElementById("movies-message");
   const editCancel = document.getElementById("edit-cancel");
@@ -173,5 +174,97 @@ document.addEventListener("DOMContentLoaded", () => {
         suspendInput = false;
       }
     } // section 4
+    else if (e.target === addmovie) {
+      showing.style.display = "none";
+      editmovie.style.display = "block";
+      showing = editmovie;
+      delete editmovie.dataset.id;
+      title.value = "";
+      director.value = "";
+      year.value = "";
+      catagory.value = "catagory";
+      addingmovie.textContent = "add";
+    } else if (e.target === editCancel) {
+      showing.style.display = "none";
+      title.value = "";
+      director.value = "";
+      year.value = "";
+      catagory.value = "catagory";
+      thisEvent = new Event("startDisplay");
+      document.dispatchEvent(thisEvent);
+    } else if (e.target === addingmovie) {
+      if (!editmovie.dataset.id) {
+        // this is an attempted add
+        suspendInput = true;
+        try {
+          const response = await fetch("/api/v1/library", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              title: title.value,
+              director: director.value,
+              year: year.value,
+              catagory: catagory.value,
+            }),
+          });
+          const data = await response.json();
+          if (response.status === 201) {
+            //successful create
+            message.textContent = "The movie entry was created.";
+            showing.style.display = "none";
+            thisEvent = new Event("startDisplay");
+            document.dispatchEvent(thisEvent);
+            title.value = "";
+            director.value = "";
+            year.value = "";
+            catagory.value = "catagory";
+          } else {
+            // failure
+            message.textContent = data.msg;
+          }
+        } catch (err) {
+          message.textContent = "A communication error occurred.";
+        }
+        suspendInput = false;
+      } else {
+        // this is an update
+        suspendInput = true;
+        try {
+          const movieID = editmovie.dataset.id;
+          const response = await fetch(`/api/v1/library/${movieID}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              title: title.value,
+              director: director.value,
+              year: year.value,
+              catagory: catagory.value,
+            }),
+          });
+          const data = await response.json();
+          if (response.status === 200) {
+            message.textContent = "The entry was updated.";
+            showing.style.display = "none";
+            title.value = "";
+            director.value = "";
+            year.value = "";
+            catagory.value = "catagory";
+            thisEvent = new Event("startDisplay");
+            document.dispatchEvent(thisEvent);
+          } else {
+            message.textContent = data.msg;
+          }
+        } catch (err) {
+          message.textContent = "A communication error occurred.";
+        }
+      }
+      suspendInput = false;
+    } // section 5
   });
 });
