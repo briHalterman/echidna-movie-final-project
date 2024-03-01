@@ -176,6 +176,13 @@ Encryption key 256
 
 Patch vs Put
 
+#### Security
+
+- helmet
+- cors
+- xss-clean
+- express-rate-limit
+
 Cheese Movies:
 Title                                       Director                                    Year    Catagory
 Mousehunt
