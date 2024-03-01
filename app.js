@@ -4,9 +4,17 @@
 require("dotenv").config();
 // require express-async-errors
 require("express-async-errors");
+
+// extra security packages
+const helmet = require('helmet');
+const cors = require('cors');
+const xss = require('xss-clean');
+const rateLimiter = require('express-rate-limit');
+
 // require and invoke express
 const express = require("express");
 const app = express();
+
 // import connectDB
 const connectDB = require("./db/connect");
 // import authentication middleware
@@ -23,9 +31,19 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 // configure express.json()
 app.use(express.json());
 
-// extra security packages
-
-// extra security packages
+// invoke extra security packages
+app.set('trust proxy', 1); // because app will be behind reverse proxy
+app.use(
+  rateLimiter({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+	  limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+  })
+  // error message defaults to 'Too many requests, please try again later'
+  // default status code response = 429
+);
+app.use(helmet());
+app.use(cors());
+app.use(xss());
 
 // routes
 // route for handling get request for path /
