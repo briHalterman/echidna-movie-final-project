@@ -53,11 +53,15 @@ const updateMovie = async (req, res) => {
     params: { id: movieId },
   } = req;
 
-  if (title === '' || director === '') {
-    throw new BadRequestError('Title & Director fields cannot be empty')
+  if (title === "" || director === "") {
+    throw new BadRequestError("Title & Director fields cannot be empty");
   }
 
-  const movie = await MovieRecord.findOneAndUpdate({ _id: movieId, createdBy: userId }, req.body, { new: true, runValidators: true });
+  const movie = await MovieRecord.findOneAndUpdate(
+    { _id: movieId, createdBy: userId },
+    req.body,
+    { new: true, runValidators: true }
+  );
 
   if (!movie) {
     throw new NotFoundError(`No movie with id ${movieId}`);
@@ -75,14 +79,14 @@ const removeMovie = async (req, res) => {
 
   const movie = await MovieRecord.findByIdAndDelete({
     _id: movieId,
-    createdBy: userId
+    createdBy: userId,
   });
 
   if (!movie) {
     throw new NotFoundError(`No movie with id ${movieId}`);
   }
   // response:
-  res.status(StatusCodes.OK).send();
+  res.status(StatusCodes.OK).json({ msg: "The entry was deleted." });
 };
 
 // export library controllers

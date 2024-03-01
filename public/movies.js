@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const moviesTable = document.getElementById("movies-table");
   const moviesTableHeader = document.getElementById("movies-table-header");
   const addmovie = document.getElementById("add-movie");
-  const editmovie = document.getElementById("edit-movie");
+  const editMovie = document.getElementById("edit-movie");
   const title = document.getElementById("title");
   const director = document.getElementById("director");
   const year = document.getElementById("year");
   const catagory = document.getElementById("catagory");
-  const addingmovie = document.getElementById("adding-movie");
+  const addingMovie = document.getElementById("adding-movie");
   const moviesMessage = document.getElementById("movies-message");
   const editCancel = document.getElementById("edit-cancel");
 
@@ -218,14 +218,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } // section 4
     else if (e.target === addmovie) {
       showing.style.display = "none";
-      editmovie.style.display = "block";
-      showing = editmovie;
-      delete editmovie.dataset.id;
+      editMovie.style.display = "block";
+      showing = editMovie;
+      delete editMovie.dataset.id;
       title.value = "";
       director.value = "";
       year.value = "";
       catagory.value = "catagory";
-      addingmovie.textContent = "add";
+      addingMovie.textContent = "add";
     } else if (e.target === editCancel) {
       showing.style.display = "none";
       title.value = "";
@@ -234,8 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
       catagory.value = "catagory";
       thisEvent = new Event("startDisplay");
       document.dispatchEvent(thisEvent);
-    } else if (e.target === addingmovie) {
-      if (!editmovie.dataset.id) {
+    } else if (e.target === addingMovie) {
+      if (!editMovie.dataset.id) {
         // this is an attempted add
         suspendInput = true;
         try {
@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // this is an update
         suspendInput = true;
         try {
-          const movieID = editmovie.dataset.id;
+          const movieID = editMovie.dataset.id;
           const response = await fetch(`/api/v1/library/${movieID}`, {
             method: "PATCH",
             headers: {
@@ -308,5 +308,72 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       suspendInput = false;
     } // section 5
+    else if (e.target.classList.contains("editButton")) {
+      editMovie.dataset.id = e.target.dataset.id;
+      suspendInput = true;
+      try {
+        const response = await fetch(`/api/v1/library/${e.target.dataset.id}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
+        if (response.status === 200) {
+          title.value = data.movie.title;
+          director.value = data.movie.director;
+          catagory.value = data.movie.catagory;
+          showing.style.display = "none";
+          showing = editMovie;
+          showing.style.display = "block";
+          addingMovie.textContent = "update";
+          message.textContent = "";
+        } else {
+          // might happen if the list has been updated since last display
+          message.textContent = "The library entry was not found";
+          thisEvent = new Event("startDisplay");
+          document.dispatchEvent(thisEvent);
+        }
+      } catch (err) {
+        message.textContent = "A communications error has occurred.";
+      }
+      suspendInput = false;
+    }
+    // check for deleteButton class in e.target
+		else if (e.target.classList.contains("deleteButton")) {
+			// id of the entry is stored in the data-id of the button
+      editMovie.dataset.id = e.target.dataset.id;
+			// set the suspendInput flag before you start async operations
+      suspendInput = true;
+			// 
+      try {
+				// call to fetch with a method of DELETE giving the URL of that entry
+        const response = await fetch(`/api/v1/library/${e.target.dataset.id}`, {
+          method: "DELETE",
+					// include the authorization header
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.status === 200) {
+					// put a message in the text content of the message paragraph
+          message.textContent = "Movie entry has been deleted.";
+					// redraw the table showing the updated list of entries by dispatching an event to startDisplay
+					thisEvent = new Event("startDisplay");
+          document.dispatchEvent(thisEvent);
+        } else {
+          // put a message indicating the failure in the message paragraph
+          message.textContent = "Movie entry failed to delete.";
+          thisEvent = new Event("startDisplay");
+          document.dispatchEvent(thisEvent);
+        }
+      } catch (err) {
+        message.textContent = "A communications error has occurred.";
+      }
+			// clear the suspendInput flag after async operations
+      suspendInput = false;
+    }
   });
 });
