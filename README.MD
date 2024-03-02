@@ -22,35 +22,37 @@ If you choose the full stack option, you can build the front end using ordinary 
 
 #### Requirements for the Project (Rubric)
 
-1. Create a Node/Express application from scratch using the MongoDB database. It must contain the following elements:
+1. ~~Create a Node/Express application from scratch using the MongoDB database.~~ 
+
+It must contain the following elements:
 
 #### Models & Controllers
 
-2. At least two Mongoose data models. One of these must be a User data model, as you need to implement logon.
-3. Implement user registration and logon. If you are doing server side rendering, authentication must use Passport. If you are doing a full stack project, authentication must use JWT tokens. Passwords must be stored hashed.
+2. ~~At least two Mongoose data models. One of these must be a User data model, as you need to implement logon.~~
+3. ~~Implement user registration and logon. If you are doing server side rendering, authentication must use Passport. If you are doing a full stack project, authentication must use JWT tokens. Passwords must be stored hashed.~~
 4. Model attributes should use several different data types (number, string, boolean, date, array etc.).
-5. Include validation of your attributes to prevent the creation of invalid records.
-6. For any models beside the User model, implement all the CRUD (create, read, update, delete) operations in your controllers and routes.
+5. ~~Include validation of your attributes to prevent the creation of invalid records.~~
+6. ~~For any models beside the User model, implement all the CRUD (create, read, update, delete) operations in your controllers and routes.~~
 7. Bonus: implement some non-CRUD operations (like searching, sorting, paging, etc.).
-8. Implement access control middleware so that at least the create/update/delete operations require authentication. You can have unauthenticated read operations if it makes sense in your application.
-9. Implement access control logic in your controllers, so that one user can’t access another user’s data. This logic must be present for every controller operation or your application is not secure.
+8. ~~Implement access control middleware so that at least the create/update/delete operations require authentication. You can have unauthenticated read operations if it makes sense in your application.~~
+9. ~~Implement access control logic in your controllers, so that one user can’t access another user’s data. This logic must be present for every controller operation or your application is not secure.~~
 10. Include appropriate notifications to the user. For full stack applications, the messages should be returned as needed with the API. (For some APIs, the HTTP status code suffices.) Then the front end displays the message or messages to the user. For server side rendered applications, you need to store the message in the user session, perhaps using the connect-flash NPM package.
-11. Implement error handling middleware so that all exceptions and error conditions are handled and so that the user gets user friendly messages for each event.
-12. Use best practices in the organization of application code and indentation.
+11. ~~Implement error handling middleware so that all exceptions and error conditions are handled and so that the user gets user friendly messages for each event.~~
+12. ~~Use best practices in the organization of application code and indentation.~~
 
 #### User Interface
 
 The user interface is the front end for full stack applications, or the EJS views for server side rendered applications. In either case, the UI should have these capabilities:
 
-13. Registration, logon, and logoff are supported.
-14. All CRUD operations for each of the data models besided the User model are supported.
-15. Links or buttons should be provided to help the users navigate the application.
+13. ~~Registration, logon, and logoff are supported.~~
+14. ~~All CRUD operations for each of the data models besided the User model are supported.~~
+15. ~~Links or buttons should be provided to help the users navigate the application.~~
 16. Style your application. Again, this is not the focus, so keep it simple until you have done everything else.
 
 #### Deployment
 
-17. Include security protections for your application. Include security packages like xss-clean and helmet, appropriately configured.
-18. Deploy the application to Render.com.
+17. ~~Include security protections for your application. Incl. security packages like xss-clean and helmet, appropriately configured.~~
+18. ~~Deploy the application to Render.com.~~
 
 #### Bonus Items (these are entirely optional)
 
@@ -339,17 +341,17 @@ John Ratzenburger*
 15. ~~authenticate routes~~
 16. ~~hash password with bcryptjs~~
 17. ~~implement CRUD functionality~~
-18. implement query params
-19. create & import film db
-20. import models
-21. 
-22. add security packages
+18. add security packages
+19. 
+20. create & import film db*
+21. implement query params*
+22. 
 23. deploy to render
-24. apply EJS
+24. apply EJS*
 25. implement authentication middleware
 26. implement mongoose ObjectId
-27. implement query params
+27. style with css
 28. handle mongoose validation errors
-29. swagger documentation?
+29. swagger documentation*
 30. dynamically set authorization header
 
