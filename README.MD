@@ -216,6 +216,42 @@ Patch vs Put
 
 // packages must be used whenever an application is deployed publicly to minimize the chance of a security exposure
 
+#### To Do:
+
+1.  ~~submit project proposal~~
+2.  ~~wireframe project~~
+3.  ~~install dependencies & spin up nodemon~~
+4.  ~~set up basic file structure~~
+5.  ~~listen on server~~
+6.  ~~set up controllers & routes structures~~
+7.  ~~connect to db~~  
+8.  ~~set up mongoose & postman~~
+9.  ~~handle errors~~
+10. ~~schema models & methods~~
+11. ~~generate token with jwt~~
+12. ~~set up register functionality~~
+13. ~~set up login functionality~~
+14. ~~create user model~~
+15. ~~authenticate routes~~
+16. ~~hash password with bcryptjs~~
+17. ~~implement CRUD functionality~~
+18. ~~implement authentication middleware~~
+19. ~~implement mongoose pre Save & ObjectId~~
+20. ~~dynamically set authorization header~~
+21. ~~handle mongoose validation errors~~
+22. ~~add security packages~~
+23. ~~deploy to render~~
+24. ~~apply front-end~~
+25. style with css
+26. build out movie record model
+27. edit README & commentary
+28. create & import film db*
+29. implement query params/searching/sorting/paging*
+30. swagger documentation*
+31. implement tests*
+31. apply EJS* 
+32. 
+
 Cheese Movies:
 Title                                       Director                                    Year    Catagory
 Mousehunt
@@ -322,36 +358,5 @@ Cheddar
 The Wacky Adventures of Ronald McDonald*
 John Ratzenburger*
 
-#### To Do:
 
-1.  ~~submit project proposal~~
-2.  ~~wireframe project~~
-3.  ~~install dependencies & spin up nodemon~~
-4.  ~~set up basic file structure~~
-5.  ~~listen on server~~
-6.  ~~connect to db~~
-7.  ~~set up controllers & routes structures~~
-8.  ~~set up mongoose & postman~~
-9.  ~~handle errors~~
-10. ~~schema models & methods~~
-11. ~~generate token with jwt~~
-12. ~~set up register functionality~~
-13. ~~set up login functionality~~
-14. ~~create user model~~
-15. ~~authenticate routes~~
-16. ~~hash password with bcryptjs~~
-17. ~~implement CRUD functionality~~
-18. add security packages
-19. 
-20. create & import film db*
-21. implement query params*
-22. 
-23. deploy to render
-24. apply EJS*
-25. implement authentication middleware
-26. implement mongoose ObjectId
-27. style with css
-28. handle mongoose validation errors
-29. swagger documentation*
-30. dynamically set authorization header
 
