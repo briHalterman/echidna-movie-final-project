@@ -252,8 +252,7 @@ Patch vs Put
 31. apply EJS* 
 32. 
 
-Cheese Movies:
-Title                                       Director                                    Year    Catagory
+#### Cheese Movies for DB
 Mousehunt
 Ratatouille
 Wallace & Gromit: A Grand Day Out
