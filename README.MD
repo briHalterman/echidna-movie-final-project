@@ -36,7 +36,7 @@ It must contain the following elements:
 7. Bonus: implement some non-CRUD operations (like searching, sorting, paging, etc.).
 8. ~~Implement access control middleware so that at least the create/update/delete operations require authentication. You can have unauthenticated read operations if it makes sense in your application.~~
 9. ~~Implement access control logic in your controllers, so that one user can’t access another user’s data. This logic must be present for every controller operation or your application is not secure.~~
-10. Include appropriate notifications to the user. For full stack applications, the messages should be returned as needed with the API. (For some APIs, the HTTP status code suffices.) Then the front end displays the message or messages to the user. For server side rendered applications, you need to store the message in the user session, perhaps using the connect-flash NPM package.
+10. ~~Include appropriate notifications to the user. For full stack applications, the messages should be returned as needed with the API. (For some APIs, the HTTP status code suffices.) Then the front end displays the message or messages to the user. For server side rendered applications, you need to store the message in the user session, perhaps using the connect-flash NPM package.~~
 11. ~~Implement error handling middleware so that all exceptions and error conditions are handled and so that the user gets user friendly messages for each event.~~
 12. ~~Use best practices in the organization of application code and indentation.~~
 
@@ -47,7 +47,7 @@ The user interface is the front end for full stack applications, or the EJS view
 13. ~~Registration, logon, and logoff are supported.~~
 14. ~~All CRUD operations for each of the data models besided the User model are supported.~~
 15. ~~Links or buttons should be provided to help the users navigate the application.~~
-16. Style your application. Again, this is not the focus, so keep it simple until you have done everything else.
+16. ~~Style your application. Again, this is not the focus, so keep it simple until you have done everything else.~~
 
 #### Deployment
 
@@ -242,14 +242,15 @@ Patch vs Put
 22. ~~add security packages~~
 23. ~~deploy to render~~
 24. ~~apply front-end~~
-25. style with css
+25. ~~style with css~~
+26. add finishing touches to front-end*
 26. build out movie record model
 27. edit README & commentary
 28. create & import film db*
 29. implement query params/searching/sorting/paging*
 30. swagger documentation*
 31. implement tests*
-31. apply EJS* 
+31. apply EJS*? 
 32. 
 
 #### Cheese Movies for DB
