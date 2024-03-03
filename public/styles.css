@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
+* {}
+
+body {
+ /* background-color: #e8dbd3; */
+ background-color: #75474a;
+ font-family: "Playpen Sans", cursive;
+}
+
+.class {}
+
+button {
+  background-color: rosybrown;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 15px;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+#movies {
+  background-color: #e8dbd3;
+  /* background-color: #75474a; */
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+#intro img {
+  border: #75474a 5px solid;
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  max-width: 100%;
+  /* border-radius: 10px; */
+}
+
+#movies img {
+  /* border: rosybrown 3px solid; */
+  display: block;
+  margin: 0 auto;
+  width: 333px;
+  max-width: 100%;
+  /* border-radius: 10px; */  
+}
+
+#message {
+  color: black;
+}
+
+a {
+  color: #aa7d7a;
+}
+
+header, main, footer {
+ max-width: 800px;
+ margin: 0 auto;
+}
+
+main {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+header, nav, footer {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+p, li {
+  line-height: 2;
+  color: white;
+}
+
+#back-to-top {
+  display: block;
+  text-align: right;
+}
+
+nav a {
+  display: inline-block;
+  padding: 20px;
+  background-color: #75474a;
+  border-radius: 5px;
+  color: white;
+  font-weight: 800;
+}
