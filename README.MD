@@ -244,16 +244,18 @@ Patch vs Put
 24. ~~apply front-end~~
 25. ~~style with css~~
 26. add finishing touches to front-end*
-26. build out movie record model
-27. edit README & commentary
-28. create & import film db*
-29. implement query params/searching/sorting/paging*
-30. swagger documentation*
-31. implement tests*
-31. apply EJS*? 
-32. 
+27. build out movie record model*
+28. build game model
+28. edit README & commentary*
+29. create & import film db*
+30. implement query params/searching/sorting/paging*
+31. swagger documentation*
+32. implement tests*
+33. apply EJS? 
+34. connect databases?
+35.
 
-#### Cheese Movies for DB
+#### Movies for DB
 Mousehunt
 Ratatouille
 Wallace & Gromit: A Grand Day Out
@@ -355,8 +357,7 @@ The Founder
 Willy Wonka & The Chocolate Factory
 The Bob's Burgers Movie
 Cheddar
-The Wacky Adventures of Ronald McDonald*
-John Ratzenburger*
+
 
 
 
