@@ -27,6 +27,10 @@ const MovieRecordSchema = new mongoose.Schema(
       enum: ['catagory', 'narrative', 'avant-garde', 'documentary'],
       default: 'catagory'
     },
+    isLiked: {
+      type: Boolean,
+      default: false, // Default to false, indicating no thumbs up by default
+    },
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
