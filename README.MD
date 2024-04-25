@@ -5,6 +5,7 @@ GoudaFlix is a Node.js application developed as the final project for the Advanc
 ## Table of Contents
 - [Rubric Requirements Met](#rubric-requirements-met)
 - [Features](#features)
+- [Planned Features](#planned-features)
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
 - [License](#license)
@@ -17,7 +18,7 @@ This project meets the requirements outlined in the Code the Dream rubric for th
    - Multiple Mongoose data models, including User and Movie-record.
    - Authentication using JWT tokens with hashed passwords.
    - Validation of attributes to prevent the creation of invalid records.
-   - CRUD operations for Movie and MovieRecord models.
+   - CRUD operations for MovieRecord models.
 
 2. **User Interface**:
    - Registration, logon, and logoff functionalities.
@@ -39,7 +40,7 @@ This project meets the requirements outlined in the Code the Dream rubric for th
 
 ## Planned Features
 
-- Extended Movie Model: Enhance the movie model to include features such as a thumbs up/thumbs down boolean and MPAA rating for a richer movie browsing experience.
+- Extended Movie Model: Enhance the movie model to include features such as a MPAA rating.
 - Improved CSS Styling: Enhance the visual appearance of the application by improving CSS styling for a more polished look and feel.
 - Custom Film Database: Create and import a custom film database.
 - Bonus features such as searching, sorting, and pagination: Implement query parameters, searching, sorting, and pagination functionality to improve data retrieval and user experience.
@@ -53,6 +54,7 @@ This project meets the requirements outlined in the Code the Dream rubric for th
 - Express
 - MongoDB
 - Mongoose
+- Postman
 - JWT tokens
 - Render.com (for deployment)
 
