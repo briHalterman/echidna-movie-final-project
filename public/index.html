@@ -75,10 +75,11 @@
                 <th>Director</th>
                 <th>Year</th>
                 <th>Catagory</th>
+                <th>Liked</th>
                 <th colspan="2"></th>
             </tr>
         </table>
-        <button type="button" id="add-movie">add movie</button>
+        <button type="button" id="add-movie">Add Movie</button>
       </div>
       <div id="edit-movie" style="display:none;">
           <form>
@@ -104,6 +105,10 @@
                       <option value="avant-garde">avant-garde</option>
                       <option value="documentary">documentary</option>
                   </select>
+              </div>
+              <div>
+                <label for="isLiked">Like:</label>
+                <input type="checkbox" id="isLiked"> 
               </div>
               <button type="button" id="adding-movie">add</button>
               <button type="button" id="edit-cancel">cancel</button>

@@ -1,11 +1,4 @@
-// async function buildmoviesTable(
-//   moviesTable,
-//   moviesTableHeader,
-//   token,
-//   message
-// ) {
-//   return 0;
-// }
+// The movies.js script for building the movies table and managing movie editing/adding
 
 async function buildmoviesTable(
   moviesTable,
@@ -31,7 +24,7 @@ async function buildmoviesTable(
         for (let i = 0; i < data.movies.length; i++) {
           let editButton = `<td><button type="button" class="editButton" data-id=${data.movies[i]._id}>edit</button></td>`;
           let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.movies[i]._id}>delete</button></td>`;
-          let rowHTML = `<td>${data.movies[i].title}</td><td>${data.movies[i].director}</td><td>${data.movies[i].year}</td><td>${data.movies[i].catagory}</td>${editButton}${deleteButton}`;
+          let rowHTML = `<td>${data.movies[i].title}</td><td>${data.movies[i].director}</td><td>${data.movies[i].year}</td><td>${data.movies[i].catagory}</td><td>${data.movies[i].isLiked}</td>${editButton}${deleteButton}`;
           let rowEntry = document.createElement("tr");
           rowEntry.innerHTML = rowHTML;
           children.push(rowEntry);
@@ -76,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const director = document.getElementById("director");
   const year = document.getElementById("year");
   const catagory = document.getElementById("catagory");
+  const isLiked = document.getElementById("isLiked");
   const addingMovie = document.getElementById("adding-movie");
   const moviesMessage = document.getElementById("movies-message");
   const editCancel = document.getElementById("edit-cancel");
@@ -225,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
       director.value = "";
       year.value = "";
       catagory.value = "catagory";
+      isLiked.value = false;
       addingMovie.textContent = "add";
     } else if (e.target === editCancel) {
       showing.style.display = "none";
@@ -232,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
       director.value = "";
       year.value = "";
       catagory.value = "catagory";
+      isLiked.value = false;
       thisEvent = new Event("startDisplay");
       document.dispatchEvent(thisEvent);
     } else if (e.target === addingMovie) {
@@ -250,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
               director: director.value,
               year: year.value,
               catagory: catagory.value,
+              isLiked: isLiked.checked
             }),
           });
           const data = await response.json();
@@ -263,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
             director.value = "";
             year.value = "";
             catagory.value = "catagory";
+            isLiked.value = false;
           } else {
             // failure
             message.textContent = data.msg;
@@ -287,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
               director: director.value,
               year: year.value,
               catagory: catagory.value,
+              isLiked: isLiked.checked
             }),
           });
           const data = await response.json();
@@ -297,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
             director.value = "";
             year.value = "";
             catagory.value = "catagory";
+            isLiked.value = false;
             thisEvent = new Event("startDisplay");
             document.dispatchEvent(thisEvent);
           } else {
@@ -324,6 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title.value = data.movie.title;
           director.value = data.movie.director;
           catagory.value = data.movie.catagory;
+          isLiked.checked = data.movie.isLiked;
           showing.style.display = "none";
           showing = editMovie;
           showing.style.display = "block";
